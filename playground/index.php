@@ -13,7 +13,8 @@
     <![endif]-->
     <style>
     	.row .div {
-    		background-color: blue;
+    		background-color:  	#E0E0E0 ;
+    		
     	}
     </style>
   </head>
