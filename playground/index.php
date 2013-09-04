@@ -12,15 +12,15 @@
       <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
     <style>
-    	.row .div {
-    		background-color: #E0E0E0 ;
+    	.row div {
+    		background-color: #B8B8B8 ;
     		
     	}
     </style>
   </head>
   <body>
     <h1>This the playground</h1>
-    <p>test</p>
+
     
     <div class="container">
 		    <div class="row">
