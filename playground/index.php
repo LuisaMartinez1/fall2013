@@ -13,13 +13,14 @@
     <![endif]-->
     <style>
     	.row .div {
-    		background-color:  	#E0E0E0 ;
+    		background-color: #E0E0E0 ;
     		
     	}
     </style>
   </head>
   <body>
     <h1>This the playground</h1>
+    <h2> test</h2>
     
     <div class="container">
 		    <div class="row">
