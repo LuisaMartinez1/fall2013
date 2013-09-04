@@ -20,7 +20,7 @@
   </head>
   <body>
     <h1>This the playground</h1>
-    <h2> test</h2>
+    <p>test</p>
     
     <div class="container">
 		    <div class="row">
