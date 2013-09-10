@@ -1,4 +1,5 @@
-
+<html>
+	<head>
     <title>Jumbotron Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
@@ -29,8 +30,10 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="active">
+            	<a href="./">Home</a></li>
+            <li>
+            	<a href="contact.php"> Contact </a></li>
              <li><a href="#link">Links</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -45,8 +48,11 @@
               </ul>
             </li>
           </ul>
-          <form class="navbar-form navbar-right">
-            Signed in as Luisa Martinez
+          <form class="navbar-text pull-right">
+           Signed in as 
+           <a class ="navbar-link" href="#" >
+           		Luisa Martinez
+           </a>
           </form>
         </div><!--/.navbar-collapse -->
       </div>
