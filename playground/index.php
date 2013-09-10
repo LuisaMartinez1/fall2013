@@ -31,11 +31,18 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active">
-            	<a href="./">Home</a></li>
+            	<a href="./">
+            		Home
+            	</a></li>
             <li>
-            	<a href="contact.php"> Contact </a></li>
-             <li><a href="#link">Links</a></li>
-            <li class="dropdown">
+            	<a href="contact.php">
+            		 Contact 
+            	</a></li>
+             <li>
+             	<a href="links.php">
+             		Links
+             	</a></li>
+              <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Action</a></li>
@@ -46,7 +53,8 @@
                 <li><a href="#">Separated link</a></li>
                 <li><a href="#">One more separated link</a></li>
               </ul>
-            </li>
+             </li>
+
           </ul>
           <form class="navbar-text pull-right">
            Signed in as 
@@ -59,8 +67,9 @@
     </div>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
+    <br>
+    <div class="container">
+       <div class="jumbotron">
         <h1>Hello world!</h1>
         <p> Welcome class of 2013 to Web Server Programming</p>
         <p><a class="btn btn-success">Learn more </a></p>
@@ -73,7 +82,7 @@
         <div class="col-lg-4">
           <h2>Heading</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn  btn-primary btn-lg " href="#">View details &raquo;</a></p>
+          <p><a class="btn  btn-primary btn-md " href="#">View details &raquo;</a></p>
         </div>
         <div class="col-lg-4">
           <h2>Important Points</h2>
@@ -81,12 +90,12 @@
           <li>They are all centralized in one file/li>
           <li>They change apearance to show you which page you are on.</li>
           <li>These colunms start as three columns then reduce as the browser shrinks</li>
-          <p><a class="btn  btn-primary btn-lg " href="#">View details &raquo; </a></p>
+          <p><a class="btn  btn-primary btn-md " href="#">View details &raquo; </a></p>
        </div>
         <div class="col-lg-4">
           <h2>Heading</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn  btn-primary btn-lg " href="#">View details &raquo;</a></p>
+          <p><a class="btn  btn-primary btn-md " href="#">View details &raquo;</a></p>
         </div>
       </div>
 

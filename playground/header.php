@@ -7,13 +7,13 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Jumbotron Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../../dist/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
+    <link href="jumbotron.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -23,7 +23,8 @@
   </head>
 
   <body>
-   <div class="navbar navbar-inverse navbar-fixed-top">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -31,16 +32,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Playground</a>
+          <a class="navbar-brand" href="#">Project name</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active">
-            	<a href="./">Home</a></li>
-            <li>
-            	<a href="contact.php"> Contact </a></li>
-             <li>
-             	<a href="links.php">Links</a></li>
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="links.php"</li>Links</a>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -67,36 +65,11 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h2>Hello world!</h2>
-        <font size = "3">Welcome class of 2013 to Web Server Programming</font>
- 			<a class="btn btn-default">Learn more </a></p> 
+        <h2>Hello, world!</h2>
+         <font size = "3">Welcome class of 2013 to Web Server Programming</font>
+        <p><a class="btn btn-default btn-md">Learn more &raquo;</a></p>
       </div>
     </div>
-
-
-
-    <div class="container">
-     
-       <form class="form-signin">
-        <h2 class="form-signin-heading">Contact Us</h2>
-        Email <input type="text" class="form-control" placeholder="Email address" autofocus>
-        <br>
-        Message 
-  		<textarea name="comments" class="form-control" cols="10" rows="2" placeholder="Message goes here"></textarea><br>
-
-		</form>
-        <br>
-        
-        <button class="btn  " type="submit">Submit</button>
-      </form>
-     
-    </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    
   </body>
-</html>
-
- 
+ </html> 
