@@ -19,15 +19,22 @@
     <link href="signin.css" rel="stylesheet">
     <style>
     #box{
-     		width:500px; }
-    #right{
-    	margin-right:-75px;}
+     		width:500px; 
+     		float:left;
+     		position:relative;
+ 			margin-right:3px;
+ 			}
+    #right{margin-right:-75px;}
     #text{
     	position:relative;
- 		left:350px;
+ 		left:300px;
     }
     #head{
     	margin-top: 60px;
+    	}
+    .align{
+    position:relative;
+ 		right:590px;
     }
    
     </style>
@@ -60,8 +67,6 @@
                 	<li><a href="#">Action</a></li>
                 	<li><a href="#">Another action</a></li>
                 	<li><a href="#">Something else here</a></li>
-                	<li class="divider"></li>
-                	<li class="dropdown-header">Nav header</li>
                 	<li><a href="#">Separated link</a></li>
                 	<li><a href="#">One more separated link</a></li>
               	</ul>
@@ -84,13 +89,17 @@
     <div class="container" id="right">
      	<form class="form-signin">
          
-        	<lable>Email </lable>
+        	<lable class ="align">Your Email </lable>
         	<input id="box" type="text" class="form-control" placeholder="Email address" autofocus>
         	<br>
-        	<label>Message </label>
+        	<br>
+        	<br>
+        	<label class="align"> Message </label>
   			<textarea id ="box" name="comments" class="form-control" cols="10" rows="2" placeholder="Message goes here"></textarea><br>
 		</form>
-        
+        <br>
+        <br>
+        <br>
         <button class="btn btn-md" type="submit">Submit</button>
     </div> <!-- /container --> 
     

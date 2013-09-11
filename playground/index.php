@@ -44,8 +44,6 @@
                 <li><a href="#">Action</a></li>
                 <li><a href="#">Another action</a></li>
                 <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
                 <li><a href="#">Separated link</a></li>
                 <li><a href="#">One more separated link</a></li>
               </ul>
@@ -82,10 +80,12 @@
         </div>
         <div class="col-lg-4">
           <h2>Important Points</h2>
-          <li>The three main links in the navbar work</li>
-          <li>They are all centralized in one file/li>
-          <li>They change apearance to show you which page you are on.</li>
-          <li>These colunms start as three columns then reduce as the browser shrinks</li>
+          <ul>
+          	<li>The three main links in the navbar work</li>
+          	<li>They are all centralized in one file</li>
+          	<li>They change apearance to show you which page you are on.</li>
+          	<li>These colunms start as three columns then reduce as the browser shrinks</li>
+         </ul> 	
           <p><a class="btn  btn-primary btn-md " href="#">View details &raquo; </a></p>
        </div>
         <div class="col-lg-4">
@@ -97,9 +97,7 @@
 
       <hr>
 
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
+   
     </div> <!-- /container -->
 
 
