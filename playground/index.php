@@ -14,6 +14,11 @@
       <script src="../../assets/js/html5shiv.js"></script>
       <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
+    <style>
+    #head{
+    	margin-top: 40px;
+    }
+   </style>
   </head>
 
   <body>
@@ -30,19 +35,10 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active">
-            	<a href="./">
-            		Home
-            	</a></li>
-            <li>
-            	<a href="contact.php">
-            		 Contact 
-            	</a></li>
-             <li>
-             	<a href="links.php">
-             		Links
-             	</a></li>
-              <li class="dropdown">
+            <li class="active"><a href="./">Home</a></li>
+            <li><a href="contact.php">Contact </a></li>
+            <li><a href="links.php">Links</a></li>
+            <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Action</a></li>
@@ -54,8 +50,8 @@
                 <li><a href="#">One more separated link</a></li>
               </ul>
              </li>
-
           </ul>
+          
           <form class="navbar-text pull-right">
            Signed in as 
            <a class ="navbar-link" href="#" >
@@ -68,11 +64,11 @@
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <br>
-    <div class="container">
+    <div class="container" id="head">
        <div class="jumbotron">
         <h1>Hello world!</h1>
         <p> Welcome class of 2013 to Web Server Programming</p>
-        <p><a class="btn btn-success">Learn more </a></p>
+        <p><a class="btn btn-success btn-lg">Learn more </a></p>
       </div>
     </div>
 
@@ -110,8 +106,10 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../assets/js/jquery.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+   
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
   </body>
 </html>
 
