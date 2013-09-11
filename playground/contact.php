@@ -55,9 +55,9 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active">
-            	<a href="./">Home</a></li>
             <li>
+            	<a href="./">Home</a></li>
+            <li class="active">
             	<a href="contact.php">Contact </a></li>
              <li>
              	<a href="links.php">Links</a></li>
@@ -78,13 +78,8 @@
        </div><!--/.navbar-collapse -->
       </div>
     </div>
-    <div class="container" id="head">
-      <div class="jumbotron">
-        <h2>Hello world!</h2>
-        <font size ="3">Welcome class of 2013 to Web Server Programming</font>
-        	<a class="btn btn-md btn-default" href="../../components/#navbar">Learn more</a>
-      </div>	
-    </div>
+        <? include 'header.php' ?>
+
     <h2  id="text">Contact Us</h2>
     <div class="container" id="right">
      	<form class="form-signin">

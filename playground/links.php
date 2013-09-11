@@ -18,29 +18,13 @@
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
     <style>
-    #box{
-     		width:500px; }
-    #right{
-    	margin-right:-75px;}
-    #text{
-    	position:relative;
- 		left:350px;
-    }
-    #head{
-    	margin-top: 60px;
-    }
-   
-   .leftText{
-  	 
-  	 position:relative;
- 		left:10px;
-  	 
-   	}
-   	
-   	#pic{
-   		display:block;
-   		float:left;
-   	}
+    	#box{width:500px; }
+    	#right{margin-right:-75px;}
+    	#text{position:relative; left:350px;}
+   		#head{margin-top: 60px;}
+   		#pic{float:left;margin-top:11px;}
+   		.leftText{position:relative;left:10px;}
+   		
     </style>
   </head>
   <body>
@@ -59,11 +43,11 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active">
+            <li>
             	<a href="./">Home</a></li>
             <li>
             	<a href="contact.php">Contact </a></li>
-             <li>
+             <li class="active">
              	<a href="links.php">Links</a></li>
               <li class="dropdown">
               	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -83,18 +67,15 @@
        </div><!--/.navbar-collapse -->
       </div>
     </div>
-    <div class="container" id="head">
-      <div class="jumbotron">
-        <h2>Hello world!</h2>
-        <font size ="3">Welcome class of 2013 to Web Server Programming</font>
-        	<a class="btn btn-md btn-default" href="../../components/#navbar">Learn more</a>
-      </div>	
-      
-    <a href='#'>
+    
+    <? include 'header.php' ?>
+   
+  <div class="container">
+	<a href='#'>
    	<img class="media-object" id="pic" style="width: 64px; height: 64px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACDUlEQVR4Xu2Yz6/BQBDHpxoEcfTjVBVx4yjEv+/EQdwa14pTE04OBO+92WSavqoXOuFp+u1JY3d29rvfmQ9r7Xa7L8rxY0EAOAAlgB6Q4x5IaIKgACgACoACoECOFQAGgUFgEBgEBnMMAfwZAgaBQWAQGAQGgcEcK6DG4Pl8ptlsRpfLxcjYarVoOBz+knSz2dB6vU78Lkn7V8S8d8YqAa7XK83ncyoUCjQej2m5XNIPVmkwGFC73TZrypjD4fCQAK+I+ZfBVQLwZlerFXU6Her1eonreJ5HQRAQn2qj0TDukHm1Ws0Ix2O2260RrlQqpYqZtopVAoi1y+UyHY9Hk0O32w3FkI06jkO+74cC8Dh2y36/p8lkQovFgqrVqhFDEzONCCoB5OSk7qMl0Gw2w/Lo9/vmVMUBnGi0zi3Loul0SpVKJXRDmphvF0BOS049+n46nW5sHRVAXMAuiTZObcxnRVA5IN4DJHnXdU3dc+OLP/V63Vhd5haLRVM+0jg1MZ/dPI9XCZDUsbmuxc6SkGxKHCDzGJ2j0cj0A/7Mwti2fUOWR2Km2bxagHgt83sUgfcEkN4RLx0phfjvgEdi/psAaRf+lHmqEviUTWjygAC4EcKNEG6EcCOk6aJZnwsKgAKgACgACmS9k2vyBwVAAVAAFAAFNF0063NBAVAAFAAFQIGsd3JN/qBA3inwDTUHcp+19ttaAAAAAElFTkSuQmCC" alt="64x64" data-src="holder.js/64x64">
 	</a> 
 	<div class="leftText">
-		<h4 id="check"> Check This out</h4>
+		<h4> Check This out</h4>
 		Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
 		Fusce condimentum nunc ac nisi vulputate fringilla. lacinia congue felis in faucibus.
 	
