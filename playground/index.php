@@ -1,3 +1,20 @@
+<?
+	$pages = array(
+			'home'=> array(	
+			'url' => 'index.php',
+			'section' => 'home',
+			'tittle' => 'Home'
+			),
+			'links' => 'links.php' ,
+			'contacs' => 'contacts.php'
+			);
+			
+	$location ='home';
+	$name =  $pages[$location];
+	$msg = "Hello $name";
+	
+	
+?>
 <html>
 	<head>
     <title>Jumbotron Template for Bootstrap</title>
@@ -22,10 +39,10 @@
   </head>
 
   <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
+  
+   <div class="container">
+     <div class="navbar navbar-default" role="navigation">
+       <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -58,6 +75,12 @@
           </form>
         </div><!--/.navbar-collapse -->
       </div>
+    </div>
+    
+    <div class="container">
+    	<pre>
+  			<? var_dump($pages); ?>
+  		</pre>
     </div>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -107,7 +130,7 @@
    
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
+    
   </body>
 </html>
 
