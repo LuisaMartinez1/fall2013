@@ -1,5 +1,6 @@
-<!DOCTYPE html>
 
+<? $location = 'contact'; ?>
+<!DOCTYPE html>
 <html >
   <head>
     <meta charset="utf-8">
@@ -29,9 +30,7 @@
     	position:relative;
  		left:300px;
     }
-    #head{
-    	margin-top: 60px;
-    	}
+   
     .align{
     position:relative;
  		right:590px;
@@ -42,42 +41,6 @@
   <body>
    
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Playground</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li>
-            	<a href="./">Home</a></li>
-            <li class="active">
-            	<a href="contact.php">Contact </a></li>
-             <li>
-             	<a href="links.php">Links</a></li>
-              <li class="dropdown">
-              	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              	<ul class="dropdown-menu">
-                	<li><a href="#">Action</a></li>
-                	<li><a href="#">Another action</a></li>
-                	<li><a href="#">Something else here</a></li>
-                	<li><a href="#">Separated link</a></li>
-                	<li><a href="#">One more separated link</a></li>
-              	</ul>
-             </li>
-		 </ul>
-	     <form class="navbar-text pull-right">Signed in as
-	       	<a class ="navbar-link" href="#" >Luisa Martinez</a>
-         </form>
-       </div><!--/.navbar-collapse -->
-      </div>
-    </div>
         <? include 'header.php' ?>
 
     <h2  id="text">Contact Us</h2>

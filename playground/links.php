@@ -1,5 +1,6 @@
-<!DOCTYPE html>
+<? $location = 'links';?>
 
+<!DOCTYPE html>
 <html >
   <head>
     <meta charset="utf-8">
@@ -21,53 +22,13 @@
     	#box{width:500px; }
     	#right{margin-right:-75px;}
     	#text{position:relative; left:350px;}
-   		#head{margin-top: 60px;}
    		#pic{float:left;margin-top:11px;}
    		.leftText{position:relative;left:10px;}
    		
     </style>
   </head>
   <body>
-   
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Playground</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li>
-            	<a href="./">Home</a></li>
-            <li>
-            	<a href="contact.php">Contact </a></li>
-             <li class="active">
-             	<a href="links.php">Links</a></li>
-              <li class="dropdown">
-              	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              	<ul class="dropdown-menu">
-                	<li><a href="#">Action</a></li>
-                	<li><a href="#">Another action</a></li>
-                	<li><a href="#">Something else here</a></li>
-                	
-                	<li><a href="#">Separated link</a></li>
-                	<li><a href="#">One more separated link</a></li>
-              	</ul>
-             </li>
-		 </ul>
-	     <form class="navbar-text pull-right">Signed in as
-	       	<a class ="navbar-link" href="#" >Luisa Martinez</a>
-         </form>
-       </div><!--/.navbar-collapse -->
-      </div>
-    </div>
-    
+ 
     <? include 'header.php' ?>
    
   <div class="container">

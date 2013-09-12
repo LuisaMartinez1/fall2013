@@ -11,9 +11,7 @@
 			
 	$location ='home';
 	$name =  $pages[$location];
-	$msg = "Hello $name";
-	
-	
+	$msg = "Hello $name";	
 ?>
 <html>
 	<head>
@@ -32,9 +30,7 @@
       <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
     <style>
-    #head{
-    	margin-top: 40px;
-    }
+    
    </style>
   </head>
 
