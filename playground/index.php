@@ -1,18 +1,4 @@
-<?
-	$pages = array(
-			'home'=> array(	
-			'url' => 'index.php',
-			'section' => 'home',
-			'tittle' => 'Home'
-			),
-			'links' => 'links.php' ,
-			'contacs' => 'contacts.php'
-			);
-			
-	$location ='home';
-	$name =  $pages[$location];
-	$msg = "Hello $name";	
-?>
+<?$location ='home'; ?>
 <html>
 	<head>
     <title>Jumbotron Template for Bootstrap</title>
@@ -30,52 +16,18 @@
       <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
     <style>
-    
+   body{padding-top:70px;}
    </style>
   </head>
 
   <body>
   
-   <div class="container">
-     <div class="navbar navbar-default" role="navigation">
-       <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Playground</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="./">Home</a></li>
-            <li><a href="contact.php">Contact </a></li>
-            <li><a href="links.php">Links</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-             </li>
-          </ul>
-          
-          <form class="navbar-text pull-right">
-           Signed in as 
-           <a class ="navbar-link" href="#" >
-           		Luisa Martinez
-           </a>
-          </form>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </div>
+   
+  	<? include 'header.php' ?>
     
     <div class="container">
     	<pre>
-  			<? var_dump($pages); ?>
+  			<? print_r($pages); ?>
   		</pre>
     </div>
 
@@ -113,19 +65,15 @@
           <p><a class="btn  btn-primary btn-md " href="#">View details &raquo;</a></p>
         </div>
       </div>
-
-      <hr>
-
-   
-    </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-   
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	 </div> <!-- /container -->
+ 	 <script src="http://code.jquery.com/jquery.js"></script>
+     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	 <script type="text/javascript">
+	 	$(function(){
+	 		$(" .nav .home").add("active").fadout().fadein();
+	 	});
+	 </script>
+    
     
   </body>
 </html>

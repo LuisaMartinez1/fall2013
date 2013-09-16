@@ -24,12 +24,21 @@
     	#text{position:relative; left:350px;}
    		#pic{float:left;margin-top:11px;}
    		.leftText{position:relative;left:10px;}
+   		body{padding-top:70px;}
    		
     </style>
   </head>
   <body>
  
     <? include 'header.php' ?>
+    <div class="container" id="head">
+		<div class = "well">
+      		<h1>Hello world!</h1>
+        	<font size ="3">Welcome class of 2013 to Web Server Programming</font>
+        	<a class="btn btn-md btn-default" href="../../components/#navbar">Learn more</a>
+     	
+   	   </div>
+	</div>
    
   <div class="container">
 	<a href='#'>
@@ -68,7 +77,11 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    
+     <script type="text/javascript">
+	 	$(function(){
+	 		$(" .nav .links").add("active").fadout().fadein();
+	 	});
+	 </script>
      
     
   </body>
