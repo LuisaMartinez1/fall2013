@@ -10,11 +10,9 @@
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
     <title>Signin Template for Bootstrap</title>
-
-    <!-- Bootstrap core CSS -->
-      
-	 	<meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
-    	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"></link>
+	<!-- Bootstrap core CSS -->
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"></link>
       
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
@@ -23,20 +21,17 @@
     #right{margin-right:-75px;}
     #text{position:relative;left:650px;}
     body{padding-top:70px;}
-   
-    .align{
-    position:relative;
- 		right:590px;
-    }
+    
    
     </style>
   </head>
   <body>
    	 <? include 'header.php' ?>
-  
-   	<pre>
+   	 <div class= "container">
+  	 	<pre>
   			<?echo json_encode($pages,1) ;?>
-  	</pre> 
+  		</pre> 
+  	</div>
 	<div class="container" id="head">
 		<div class = "well">
       		<h1>Hello world!</h1>
@@ -47,40 +42,45 @@
 	</div>
 	
     <!--<h2  id="text">Contact Us</h2>-->
-  <div class = row>
-  	<div class="col-md-4"></div>
-    <div class="col-md-4"><h2>Contact Us</h2></div>
+  <div class = "row">
+  	<div class="col-md-3"></div>
+  	<div class="col-md-4"><h2>Contact Us</h2></div>
+  	<div class="col-md-4"></div> 
   </div>
-  <div class="container" id="right">
-     <form class="form-signin">
-         	<lable class ="align">Your Email </lable>
-        	<input id="box" type="text" class="form-control" placeholder="Email address" autofocus>
-        	<br>
-        	<br>
-        	<br>
-        	<label class="align"> Message </label>
-  			<textarea id ="box" name="comments" class="form-control" cols="10" rows="2" placeholder="Message goes here"></textarea><br>
-	 </form>
-     <br>
-     <br>
-     <br>
-     <button class="btn btn-md" type="submit">Submit</button>
-    </div> <!-- /container --> 
-    
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="http://code.jquery.com/jquery.js"></script>
+  <form class="form-horizontal" role="form">
+   <div class="form-group">
+  	<div class="row">
+    	<label for="inputEmail1" class="col-md-4 control-label">Your Email</label>
+    	<div class="col-lg-6">
+      	<input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+    	</div>
+    </div>
+  </div>
+  <div class="form-group">
+  	<div class="row">
+    	<label for="inputPassword1" class="col-md-4 control-label">Message</label>
+    	<div class="col-lg-6">
+      	<textarea type="password" class="form-control" id="inputPassword1" placeholder="Message" cols="10" rows="2"></textarea>
+    	</div>
+    </div>
+  </div>
+  <div class="form-group">
+  	<div class="row">
+  		<div class="col-lg-2"></div>
+    	<div class="col-lg-offset-2 col-lg-6">
+      	<button type="submit" class="btn btn-default">Submit</button>
+    	</div>
+    </div>
+  </div>
+</form>
+	<script src="http://code.jquery.com/jquery.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    
-      <script type="text/javascript">
+    <script src="script/main.js"></script>
+    <script type="text/javascript">
 	 	$(function(){
-	 		$(" .nav .contact").add("active").fadout().fadein();
+	 		$(" .nav .contact").addClass("active");
 	 	});
-	 </script>
-    
+	 </script>   
   </body>
 </html>
 

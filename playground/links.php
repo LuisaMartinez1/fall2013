@@ -29,8 +29,12 @@
     </style>
   </head>
   <body>
- 
-    <? include 'header.php' ?>
+  	<? include 'header.php' ?>
+  	<div class="container">
+  		<pre>
+  			<?echo json_encode($pages,1) ;?>
+  		</pre> 
+  	</div>
     <div class="container" id="head">
 		<div class = "well">
       		<h1>Hello world!</h1>
@@ -70,20 +74,14 @@
 		Fusce condimentum nunc ac nisi vulputate fringilla. lacinia congue felis in faucibus.
 	
 	</div>
-	
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="script/main.js"></script>
      <script type="text/javascript">
 	 	$(function(){
-	 		$(" .nav .links").add("active").fadout().fadein();
+	 		$(" .nav .links").addClass("active");
 	 	});
-	 </script>
-     
-    
+	 </script>    
   </body>
 </html>
 

@@ -19,23 +19,18 @@
    body{padding-top:70px;}
    </style>
   </head>
-
   <body>
-  
-   
   	<? include 'header.php' ?>
-    
-    <div class="container">
+  	<div class="container">
     	<pre>
-  			<? print_r($pages); ?>
+  			<?echo json_encode($pages,1) ;?>
   		</pre>
     </div>
-
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <br>
     <div class="container" id="head">
        <div class="jumbotron">
-        <h1>Hello world!</h1>
+        <h1>Hello world!!</h1>
         <p> Welcome class of 2013 to Web Server Programming</p>
         <p><a class="btn btn-success btn-lg">Learn more </a></p>
       </div>
@@ -68,13 +63,12 @@
 	 </div> <!-- /container -->
  	 <script src="http://code.jquery.com/jquery.js"></script>
      <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+     <script src="script/main.js"></script>
 	 <script type="text/javascript">
 	 	$(function(){
-	 		$(" .nav .home").add("active").fadout().fadein();
+	 		$(" .nav .home").addClass("active");
 	 	});
-	 </script>
-    
-    
+	 </script> 
   </body>
 </html>
 
