@@ -1,3 +1,10 @@
+<? include"inc/_global.php";?>
+
+<?
+	$conn = GetConnection();
+	$results = $conn->query('SELECT * FROM 2013Fall_keywods');
+	$rs = $result->fetch_assoc();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,7 +23,9 @@
 		$name = "Luisa";
 		include 'sometthing.php';
     ?>
-    
+    <pre>
+    	<? print_r($rs);  ?>
+    </pre>
     <spam class= "label label-success"> <? echo $msg . $name ?></spam>
  	<script src="//code.jquery.com/jquery.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"></script>
