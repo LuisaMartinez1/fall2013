@@ -2,7 +2,7 @@
 
 <?
 	$conn = GetConnection();
-	$results = $conn->query('SELECT * FROM 2013Fall_keywods');
+	$results = $conn->query('SELECT * FROM Fall2013_keywods');
 	$rs = $result->fetch_assoc();
 ?>
 <!DOCTYPE html>

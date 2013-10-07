@@ -51,7 +51,7 @@
    <div class="form-group">
   	<div class="row">
     	<label for="inputEmail1" class="col-md-4 control-label">Your Email</label>
-    	<div class="col-lg-6">
+    	<div class="col-lg-4">
       	<input type="email" class="form-control" id="inputEmail1" placeholder="Email">
     	</div>
     </div>
@@ -59,7 +59,7 @@
   <div class="form-group">
   	<div class="row">
     	<label for="inputPassword1" class="col-md-4 control-label">Message</label>
-    	<div class="col-lg-6">
+    	<div class="col-lg-4">
       	<textarea type="password" class="form-control" id="inputPassword1" placeholder="Message" cols="10" rows="2"></textarea>
     	</div>
     </div>
