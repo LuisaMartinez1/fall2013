@@ -1,8 +1,8 @@
-<? include"inc/_global.php";?>
+<? include 'inc/_global.php'; ?>
 
 <?
 	$conn = GetConnection();
-	$results = $conn->query('SELECT * FROM Fall2013_keywods');
+	$result = $conn->query('SELECT * FROM Fall2013_keyWords');
 	$rs = $result->fetch_assoc();
 ?>
 <!DOCTYPE html>

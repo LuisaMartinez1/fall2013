@@ -9,7 +9,7 @@ class Keywords {
 	{
 		$ret = array();
 		$conn = GetConnection();
-		$results = $conn->query('SELECT * FROM Fall2013_Keywords');
+		$result = $conn->query('SELECT * FROM Fall2013_KeyWords');
 		
 		while ($rs = $result->fetch_assoc()) {
 			$ret[] = $rs;

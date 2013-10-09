@@ -2,6 +2,6 @@
 
 	include_once '../../inc/_global.php';
 	
-	$model = keywods::Get();
+	$model = Keywods::Get();
 	
 	include 'list.php';
