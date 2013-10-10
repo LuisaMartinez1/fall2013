@@ -42,6 +42,7 @@
 	</div>
 	
     <!--<h2  id="text">Contact Us</h2>-->
+<div class= "container">
   <div class = "row">
   	<div class="col-md-3"></div>
   	<div class="col-md-4"><h2>Contact Us</h2></div>
@@ -72,6 +73,7 @@
     	</div>
     </div>
   </div>
+</div>
 </form>
 	<script src="http://code.jquery.com/jquery.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>

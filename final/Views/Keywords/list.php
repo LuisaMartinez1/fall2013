@@ -1,6 +1,6 @@
 <? foreach ($model as $value): ?>
 	<div>
-		<?=$value['id'] ?>
-		<?=$value['Name'] ?>
+		<?=$value['id']?>
+		<?=$value['Name']?>
 	</div>
-<? endforeach; ?>
+<? endforeach; ?>  
