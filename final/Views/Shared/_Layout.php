@@ -1,30 +1,21 @@
+!DOCTYPE html>
 <html>
 	<head>
     <title>Jumbotron Template for Bootstrap</title>
-
-    <!-- Bootstrap core CSS -->
-
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
-
-    <!-- Custom styles for this template -->
     <link href="jumbotron.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
-    <![endif]-->
     <style>
-   body{padding-top:70px;}
+  		 body{padding-top:70px;}
    </style>
-  </head>
+   </head>
   <body>
   	<header>
   		<div class="container">
-  			My website
+  			<h1>My website</h1>
   		</div>
   	</header>
-  	</header>
+  	
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
      <div class="container">
        <div class="navbar-header">
@@ -37,14 +28,12 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class = "keywords"> 
-            	
-             		<a href= "../Keyword.php/"> </a>
-             </li>
-             <li class = "Users"> 
-            	
-             		<a href= "../Users.php/"> </a>
-             </li>
+            	<li class = "keywords"> 
+             			<a href= "../Keywords/">Keywords</a>
+             	</li>
+            	 <li class = "Users"> 
+             			<a href= "../Users/">Users</a>
+            	 </li>
            	
 			 
             <li class="dropdown">
@@ -64,7 +53,7 @@
            		Luisa Martinez
            </a>
           </form>
-        </div><!--/.navbar-collapse -->
+        </div>
       </nav>
     </div>
   
@@ -74,8 +63,6 @@
      <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
      <script src="script/main.js"></script>
 	 <? if(function_exists('Scripts')) Scripts();?>
-	 	
-	 </script> 
   </body>
 </html>
 

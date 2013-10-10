@@ -1,5 +1,4 @@
-<link href ="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/css/jquery.dataTables_themeroller.min.css " type = "text/css" rel="stylesheet"/>
-
+<link href="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" />
 <div class="container">
 	<h2>Users</h2>
 	
@@ -27,10 +26,11 @@
 	</table>
 </div>
 <? function Scripts(){ ?>
-	<script src"//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
 	<script type="text/javascript">
 		$(".table").dataTable();
 	</script>
-	
-	
 <? } ?>
+	
+	
+

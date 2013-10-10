@@ -2,5 +2,5 @@
 include_once '../../inc/_global.php';
 
 $model = Users::Get();
-$view = 'list.php';
+$view = 'lists.php';
 include '../Shared/_Layout.php';
