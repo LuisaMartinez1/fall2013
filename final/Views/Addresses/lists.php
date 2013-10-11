@@ -5,15 +5,24 @@
 	<table class = "table table-hover  table-striped table-bordered">
 		<thead>
 		<tr>
+			<th>User</th>
+			<th>Address Type</th>
 			<th>Street</th>
-			
+			<th>City</th>
+			<th>Country</th>
+			<th>Zip Code</th>
 			<th></th>
 		</tr>
 		</thead>
 		<tbody>
 		<? foreach ($model as $rs): ?>
 			<tr>
+				<td><?=$rs['Users_id']?></td>
+				<td><?=$rs['AddressTypes_id']?></td>
 				<td><?=$rs['Street']?></td>
+				<td><?=$rs['City']?></td>
+				<td><?=$rs['Country']?></td>
+				<td><?=$rs['ZipCode']?></td>
 				<td>
 					
 				</td>

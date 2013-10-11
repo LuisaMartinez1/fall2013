@@ -37,6 +37,12 @@
             	 <li class = "Addresses">
             	 	<a href = "../Addresses/">Addresses</a>
             	 </li>
+            	 <li class = "Emails">
+            	 	<a href = "../Emails/">Emails</a>
+            	 </li>
+            	  <li class = "Phones">
+            	 	<a href = "../PhoneNumbers/">Phone Numbers</a>
+            	 </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
