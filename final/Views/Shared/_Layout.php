@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
     <title>Jumbotron Template for Bootstrap</title>
@@ -34,8 +34,9 @@
             	 <li class = "Users"> 
              			<a href= "../Users/">Users</a>
             	 </li>
-           	
-			 
+            	 <li class = "Addresses">
+            	 	<a href = "../Addresses/">Addresses</a>
+            	 </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -56,7 +57,7 @@
         </div>
       </nav>
     </div>
-  
+
       <? include $view; ?>
     
  	 <script src="http://code.jquery.com/jquery.js"></script>
