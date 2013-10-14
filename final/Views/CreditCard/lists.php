@@ -1,6 +1,6 @@
 <link href="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" />
 <div class="container">
-	<h2>Items</h2>
+	<h2>Credit Card</h2>
 	
 	<table class = "table table-hover  table-striped table-bordered">
 		<thead>
@@ -9,16 +9,20 @@
 			<th>Card Holder's Name</th>
 			<th>Credit Card Number</th>
 			<th>Expiration Date</th>
+			<th>Method</th>
+			
 			<th></th>
 		</tr>
 		</thead>
 		<tbody>
 		<? foreach ($model as $rs): ?>
 			<tr>
-				<td><?=$rs['Fall2013_Users_id']?></td>
+				<td><?=$rs['User']?>
+				</td>
 				<td><?=$rs['CreditCardHolderName']?></td>
 				<td><?=$rs['CreditCardNumber']?></td>
 				<td><?=$rs['CreditExpirationDate']?></td>
+				<td><?=$rs['PaymentMethod']?></td>
 				<td>
 					
 				</td>
