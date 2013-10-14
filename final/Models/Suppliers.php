@@ -3,20 +3,19 @@
 /**
  * 
  */
-class UsersFeedBack {
+class Suppliers {
 
 	static public function Get()
 	{
 		$ret = array();
 		$conn = GetConnection();
-		$result = $conn->query('SELECT * FROM Fall2013_UsersFeedBack');
+		$result = $conn->query('SELECT * FROM Fall2013_Supplier');
 		$result = $conn->query('SELECT 
-    U.id, Us.`LastName` as `User`,FeedBack
+	U.id, SuplierName, SuperId, I.`ItemName` as `Item`
 		FROM
-    Fall2013_UsersFeedBack U
-        join
-	Fall2013_Users Us on U.Users_id = Us.id 
-		');
+	Fall2013_Supplier U 
+		join
+	Fall2013_Items I on U.Fall2013_Items_id = I.id');
 
 		while ($rs = $result->fetch_assoc()) {
 		$ret[] = $rs;

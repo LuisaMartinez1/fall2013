@@ -1,30 +1,22 @@
 <link href="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" />
 <div class="container">
-	<h2>Addresses</h2>
+	<h2>Shipments</h2>
 	
 	<table class = "table table-hover  table-striped table-bordered">
 		<thead>
 		<tr>
-			<th>User</th>
-			<th>Address Type</th>
-			<th>Street</th>
-			<th>City</th>
-			<th>State</th>
-			<th>Country</th>
-			<th>Zip Code</th>
+			<th>Shipment Number</th>
+			<th>Order Number</th>
+			<th> Shipment City</th>
 			<th></th>
 		</tr>
 		</thead>
 		<tbody>
 		<? foreach ($model as $rs): ?>
 			<tr>
-				<td><?=$rs['User']?></td>
-				<td><?=$rs['Type']?></td>
-				<td><?=$rs['Street']?></td>
-				<td><?=$rs['City']?></td>
-				<td><?=$rs['State']?></td>
-				<td><?=$rs['Country']?></td>
-				<td><?=$rs['ZipCode']?></td>
+				<td><?=$rs['ShipmentNumber']?></td>
+				<td><?=$rs['Purchase']?></td>
+				<td><?=$rs['AddressCity']?></td>
 				<td>
 					
 				</td>

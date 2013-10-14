@@ -5,6 +5,7 @@
 	<table class = "table table-hover  table-striped table-bordered">
 		<thead>
 		<tr>
+			<th>id</th>
 			<th>Category Name</th>
 			<th></th>
 		</tr>
@@ -12,6 +13,7 @@
 		<tbody>
 		<? foreach ($model as $rs): ?>
 			<tr>
+				<td><?=$rs['id']?></td>
 				<td><?=$rs['CategoryName']?></td>
 				<td>
 					

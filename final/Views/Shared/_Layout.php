@@ -44,7 +44,7 @@
             	 	<a href = "../UsersFeedBack/">User Feed Back</a>
             	 </li>
             	 <li class = "UsersWishList">
-            	 	<a href = "../WishList/">User Feed Back</a>
+            	 	<a href = "../WishList/">User Wish List</a>
             	 </li>
             	 <li class = "Orders">
             	 	<a href = "../Orders/">Orders</a>
@@ -57,7 +57,12 @@
                 <li><a href="../ProductKeyWords/">Product Key Wordd</a></li>
                 <li><a href = "../CreditCard/">Credit Card</a></li>
                 <li><a href= "../Keywords/">Keywords</a></li>
-                
+                <li><a href= "../OrderItem/">Ordered Items</a></li>
+                <li><a href= "../Shipments/">Shipments</a></li>
+                <li><a href= "../Suppliers/">Suppliers</a></li>
+				<li><a href= "../AddressTypes/">AddressTypes</a></li>   
+				<li><a href= "../PhoneTypes/">PhoneTypes</a></li>     
+				<li><a href= "../PhoneTypes/">EmailTypes</a></li>                                    
               </ul>
              </li>
           </ul>

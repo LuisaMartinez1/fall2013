@@ -14,8 +14,8 @@
 		<tbody>
 		<? foreach ($model as $rs): ?>
 			<tr>
-				<td><?=$rs['Users_id']?></td>
-				<td><?=$rs['PhoneTypes_id']?></td>
+				<td><?=$rs['User']?></td>
+				<td><?=$rs['Type']?></td>
 				<td><?=$rs['value']?></td>
 				<td>
 					

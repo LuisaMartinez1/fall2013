@@ -16,7 +16,7 @@
 			<tr>
 				<td><?=$rs['ItemName']?></td>
 				<td><?=$rs['ItemPrice']?></td>
-				<td><?=$rs['Categories_id']?></td>
+				<td><?=$rs['Category']?></td>
 				<td>
 					
 				</td>

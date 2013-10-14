@@ -7,14 +7,17 @@
 		<tr>
 			<th>User</th>
 			<th>Email</th>
+			<th>Type</th>
 			<th></th>
 		</tr>
 		</thead>
 		<tbody>
 		<? foreach ($model as $rs): ?>
 			<tr>
-				<td><?=$rs['Users_id']?></td>
+				<td><?=$rs['User']?></td>
 				<td><?=$rs['Email']?></td>
+				<td><?=$rs['EmailType']?></td>
+				
 				<td>
 					
 				</td>

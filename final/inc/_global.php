@@ -13,6 +13,11 @@ include_once __DIR__ . '/../Models/Items.php';
 include_once __DIR__ . '/../Models/ProductKeyWords.php';
 include_once __DIR__ . '/../Models/Orders.php';
 include_once __DIR__ . '/../Models/CreditCard.php';
+include_once __DIR__ . '/../Models/OrderItem.php';
+include_once __DIR__ . '/../Models/Shipments.php';
+include_once __DIR__ . '/../Models/Suppliers.php';
+include_once __DIR__ . '/../Models/AddressTypes.php';
+include_once __DIR__ . '/../Models/PhoneTypes.php';
 
 
 function GetConnection()

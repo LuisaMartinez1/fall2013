@@ -21,7 +21,7 @@
 				<td><?=$rs['PurchaseNumber']?></td>
 				<td><?=$rs['PurchaseDate']?></td>
 				<td><?=$rs['PaymentMethod']?></td>
-				<td><?=$rs['Amount']?></td>
+				<td><?=$rs['PurchasedTotal']?></td>
 				<td>
 					
 				</td>

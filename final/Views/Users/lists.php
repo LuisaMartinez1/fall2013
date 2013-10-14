@@ -16,7 +16,7 @@
 			<tr>
 				<td><?=$rs['FirstName']?></td>
 				<td><?=$rs['LastName']?></td>
-				<td><?=$rs['Fall2013_Types_id']?></td>
+				<td><?=$rs['KeyWord']?></td>
 				<td>
 					
 				</td>

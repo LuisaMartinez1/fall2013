@@ -13,7 +13,7 @@
 		<tbody>
 		<? foreach ($model as $rs): ?>
 			<tr>
-				<td><?=$rs['Users_id']?></td>
+				<td><?=$rs['User']?></td>
 				<td><?=$rs['FeedBack']?></td>
 				<td>
 					

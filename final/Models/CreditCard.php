@@ -10,7 +10,7 @@ class CreditCard {
 		$ret = array();
 		$conn = GetConnection();
 		$result = $conn->query('SELECT * FROM Fall2013_PaymentCreditCardTypes');
-		$reslt=$conn->query('SELECT 
+		$result=$conn->query('SELECT 
     U.id,CreditCardNumber,CreditCardHolderName,CreditExpirationDate,CreditSecurityCode, Us.`LastName` as `User`, Method
 	FROM
     Fall2013_PaymentCreditCardTypes U
