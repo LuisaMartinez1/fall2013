@@ -9,6 +9,7 @@
 			<th>Address Type</th>
 			<th>Street</th>
 			<th>City</th>
+			<th>State</th>
 			<th>Country</th>
 			<th>Zip Code</th>
 			<th></th>
@@ -21,6 +22,7 @@
 				<td><?=$rs['AddressTypes_id']?></td>
 				<td><?=$rs['Street']?></td>
 				<td><?=$rs['City']?></td>
+				<td><?=$rs['State']?></td>
 				<td><?=$rs['Country']?></td>
 				<td><?=$rs['ZipCode']?></td>
 				<td>
