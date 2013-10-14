@@ -28,9 +28,6 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            	<li class = "keywords"> 
-             			<a href= "../Keywords/">Keywords</a>
-             	</li>
             	 <li class = "Users"> 
              			<a href= "../Users/">Users</a>
             	 </li>
@@ -49,13 +46,16 @@
             	 <li class = "UsersWishList">
             	 	<a href = "../WishList/">User Feed Back</a>
             	 </li>
+            	 <li class = "Orders">
+            	 	<a href = "../Orders/">Orders</a>
+            	 </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="../Categories/">Categories</a></li>
                 <li><a href="../Items/">Items</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li><a href="#">Separated link</a></li>
+                <li><a href="../ProductKeyWords/">Product Key Wordd</a></li>
+                <li><a href= "../Keywords/">Keywords</a></li>
                 <li><a href="#">One more separated link</a></li>
               </ul>
              </li>

@@ -9,6 +9,8 @@ include_once __DIR__ . '/../Models/UsersFeedBack.php';
 include_once __DIR__ . '/../Models/WishList.php';
 include_once __DIR__ . '/../Models/Categories.php';
 include_once __DIR__ . '/../Models/Items.php';
+include_once __DIR__ . '/../Models/ProductKeyWords.php';
+include_once __DIR__ . '/../Models/Orders.php';
 
 
 function GetConnection()

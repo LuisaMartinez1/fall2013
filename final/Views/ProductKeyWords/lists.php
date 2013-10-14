@@ -1,20 +1,21 @@
 <link href="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" />
 <div class="container">
-	<h2>Users Feed Back</h2>
+	<h2>Product Key Words</h2>
 	
 	<table class = "table table-hover  table-striped table-bordered">
 		<thead>
 		<tr>
-			<th>User</th>
-			<th>Feed Back</th>
+			
+			<th>Id</th>
+			<th>Product Key Word</th>
 			<th></th>
 		</tr>
 		</thead>
 		<tbody>
 		<? foreach ($model as $rs): ?>
 			<tr>
-				<td><?=$rs['Users_id']?></td>
-				<td><?=$rs['FeedBack']?></td>
+				<td><?=$rs['id']?></td>
+				<td><?=$rs['Name']?></td>
 				<td>
 					
 				</td>
@@ -31,4 +32,6 @@
 <? } ?>
 	
 	
+
+
 
