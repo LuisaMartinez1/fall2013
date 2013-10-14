@@ -56,7 +56,7 @@
                 <li><a href="../Items/">Items</a></li>
                 <li><a href="../ProductKeyWords/">Product Key Wordd</a></li>
                 <li><a href= "../Keywords/">Keywords</a></li>
-                <li><a href="#">One more separated link</a></li>
+                <li><a href = "../CreditCard/">Credit Card</a></li>
               </ul>
              </li>
           </ul>
