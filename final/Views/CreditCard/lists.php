@@ -10,19 +10,17 @@
 			<th>Credit Card Number</th>
 			<th>Expiration Date</th>
 			<th>Method</th>
-			
 			<th></th>
 		</tr>
 		</thead>
 		<tbody>
 		<? foreach ($model as $rs): ?>
 			<tr>
-				<td><?=$rs['User']?>
-				</td>
+				<td><?=$rs['User']?></td>
 				<td><?=$rs['CreditCardHolderName']?></td>
 				<td><?=$rs['CreditCardNumber']?></td>
 				<td><?=$rs['CreditExpirationDate']?></td>
-				<td><?=$rs['PaymentMethod']?></td>
+				<td><?=$rs['Method']?></td>
 				<td>
 					
 				</td>

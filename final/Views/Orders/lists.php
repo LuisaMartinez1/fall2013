@@ -16,12 +16,11 @@
 		<tbody>
 		<? foreach ($model as $rs): ?>
 			<tr>
-				<td><?=$rs['Users_id']?>
-					<?=$rs['LastName']?>
+				<td><?=$rs['User']?>
 				</td>
 				<td><?=$rs['PurchaseNumber']?></td>
 				<td><?=$rs['PurchaseDate']?></td>
-				<td><?=$rs['Fall2013_PaymentCreditCardTypes_id']?></td>
+				<td><?=$rs['PaymentMethod']?></td>
 				<td><?=$rs['Amount']?></td>
 				<td>
 					
