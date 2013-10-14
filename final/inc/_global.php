@@ -11,7 +11,7 @@ include_once __DIR__ . '/../Models/Categories.php';
 include_once __DIR__ . '/../Models/Items.php';
 include_once __DIR__ . '/../Models/ProductKeyWords.php';
 include_once __DIR__ . '/../Models/Orders.php';
-include_once __DIR__ . '/../Models/CreditCard.php';
+
 
 
 function GetConnection()
