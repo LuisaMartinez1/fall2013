@@ -5,9 +5,9 @@
  */
 class ProductKeyWords {
 
+
 	static public function Get()
 	{
-		return fetch_call('SELECT * FROM Fall2013_ProductKeyWords');
-
-  }
+		return fetch_all('SELECT * FROM Fall2013_ProductKeyWords');
+	}
 }
