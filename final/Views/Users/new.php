@@ -1,14 +1,12 @@
 <div class="container">
-	<div class="form-group">
-		<form action="?action=save" method="post" class="form-horizontal">
-			<label for="FirstName">First Name</label>
-			<input tye="text" name="FirstName" id="FistName" placeholder="FirstName"/>
-		</form>
-	</div>
-	<div class="form-group">
-		<form action="?action=save" method="post" class="form-horizontal">
-			<label for="FirstName">First Name</label>
-			<input tye="submit" name="FirstName" value="Save"/>
-		</form>
-	</div>
+        <form action="?action=save" method="post" class="form-horizontal">
+                <div class="form-group">
+                        <label for="FistName">First Name</label>
+                        <input type="text" name="FirstName" id="FirstName" placeholder="First Name" class="form-control" />
+                </div>
+                <div class="form-group">
+                        
+                        <input type="submit" class="form-control" value="Save" />
+                </div>
+        </form>
 </div>

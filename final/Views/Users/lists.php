@@ -7,7 +7,7 @@
 		<tr>
 			<th>First Name</th>
 			<th>Last Name</th>
-			
+			<th>Type</th>
 			<th></th>
 		</tr>
 		</thead>
@@ -16,11 +16,12 @@
 			<tr>
 				<td><?=$rs['FirstName']?></td>
 				<td><?=$rs['LastName']?></td>
+				<td><?=$rs['KeyWord']?></td>
 			
 				<td>
-				 <a class"btn .glyphicon .glyphicon-file" href="?action=details&id<?=$rs['id']?>"></a>	
-				 <a class"btn .glyphicon .glyphicon-pencil" href="?action=details&id<?=$rs['id']?>"></a>	
-				 <a class"btn .glyphicon .glyphicon-trash.glyphicon " href="?action=details&id<?=$rs['id']?>"></a>	
+	  				<a class="glyphicon glyphicon-file" href="?action=details&id=<?=$rs['id']?>"></a>
+                    <a class="glyphicon glyphicon-pencil" href="?action=details&id=<?=$rs['id']?>"></a>
+                   	<a class="glyphicon glyphicon-trash" href="?action=details&id=<?=$rs['id']?>"></a>			 
 				</td>
 			</tr>	
 		<? endforeach?>
