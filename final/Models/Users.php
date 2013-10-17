@@ -5,25 +5,20 @@
  */
 class Users {
 
-	static public function Get()
+	static public function Get($id)
 	{
-		$ret = array();
-		$conn = GetConnection();
-		$result = $conn->query('SELECT * FROM Fall2013_Users');
-		$result = $conn->query('SELECT 
-    U.id,FirstName,LastName,K.`Name` as `KeyWord`, password
-	FROM
-    Fall2013_Users U
-        join
-	Fall2013_KeyWords K on U.KeyWords_id = K.id 
-		');
 
-		while ($rs = $result->fetch_assoc()) {
-		$ret[] = $rs;
+		if(isset($id))
+		{
+			return fetch_once("SELECT * FROM Fall2013_Users WHERE id =$id");
+			
+		}
+		else {
+			return fetch_all('SELECT * FROM Fall2013_Users');
 		}
 
-		$conn->close();
-		return $ret;
+		
+		
 	}
 
 }
