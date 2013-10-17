@@ -18,7 +18,9 @@ include_once __DIR__ . '/../Models/Shipments.php';
 include_once __DIR__ . '/../Models/Suppliers.php';
 include_once __DIR__ . '/../Models/AddressTypes.php';
 include_once __DIR__ . '/../Models/PhoneTypes.php';
-
+include_once __DIR__ . '/../Models/EmailTypes.php';
+include_once __DIR__ . '/../Models/ItemsSold.php';
+include_once __DIR__ . '/../Models/Inventory.php';
 
 function GetConnection()
 {
