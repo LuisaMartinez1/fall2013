@@ -3,7 +3,7 @@
                 <div class="form-group">
                         <label for="FistName">First Name</label>
                         <div class="class="col-sm-10 ">
-                        	<input type="text" name="FirstName" id="FirstName" placeholder="First Name" class="form-control" />
+                        	<input type="text" name="FirstName" id="FirstName" placeholder="First Name" class="form-control" value="<?=$model['FirstName']?>" />
                         </div>
                         
                 </div>

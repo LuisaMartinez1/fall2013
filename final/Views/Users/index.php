@@ -15,9 +15,15 @@ switch ($action) {
                 break;
         
         case 'save':
-                ?> <pre><? print_r($_REQUEST); ?></pre> <?
-                $model = Users::Get($_REQUEST['id']);
-                $view  = 'details.php';                
+                Users::Save($_REQUEST);
+				if($errors){
+					$models = $_REQUEST;
+					$view = 'new.php';
+				}else{
+						header("Location: ?");   
+						die(); 
+				}
+				   
                 break;
                 
         case 'edit':
