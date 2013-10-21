@@ -2,6 +2,9 @@
 <div class="container">
 	<h2>Users</h2>
 	
+	<a href="?action=new>">Add Contact</a>
+	
+	
 	<table class = "table table-hover  table-striped table-bordered">
 		<thead>
 		<tr>
@@ -17,7 +20,6 @@
 				<td><?=$rs['FirstName']?></td>
 				<td><?=$rs['LastName']?></td>
 				<td><?=$rs['KeyWord']?></td>
-			
 				<td>
 	  				<a class="glyphicon glyphicon-file" href="?action=details&id=<?=$rs['id']?>"></a>
                     <a class="glyphicon glyphicon-pencil" href="?action=details&id=<?=$rs['id']?>"></a>
