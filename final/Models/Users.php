@@ -28,11 +28,20 @@ class Users {
 
 		
 	 	static public function Save($row)
-		{
-			$sql= "Inser Into Fall2013_Users(FirstName, LastName, Password,KeyWord)" . "Values('$row[FirstName]', '$row[Password]','$ow[KeyWord]')";
-			$conn = GetConnection();
-			$conn->query($sql);
-		}
+        {
+                $sql = " Insert Into 2013Fall_Users (FirstName, LastName, password, KeyWord) "
+                        .  " Values ('$row[FirstName]', '$row[LastName]', '$row[password]', '$row[UserType]') ";
+                $conn = GetConnection();
+                $conn->query($sql);
+                $error = $conn->error;                
+                $conn->close();
+                
+                if($error){
+                        return array('db_error' => $error);
+                }else {
+                        return false;
+                }
+        }
 
 }
 

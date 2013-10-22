@@ -10,7 +10,6 @@ switch ($action) {
                 break;
                 
         case 'new':
-                
                 $view  = 'new.php';                
                 break;
         
