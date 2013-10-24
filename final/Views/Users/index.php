@@ -10,19 +10,24 @@ switch ($action) {
                 break;
                 
         case 'new':
+                $model = Users::Blank();
                 $view  = 'new.php';                
                 break;
         
         case 'save':
-                Users::Save($_REQUEST);
-				if($errors){
-					$models = $_REQUEST;
-					$view = 'new.php';
-				}else{
+				$errors = Ussers::Validate($_REQUEST);
+				if(!$errors)
+				{
+					$errors = Users::Save($_REQUEST);
+				}
+               
+				if(!$errors)
+				{
 						header("Location: ?");   
 						die(); 
 				}
-				   
+				$models = $_REQUEST;
+				$view = 'new.php';
                 break;
                 
         case 'edit':

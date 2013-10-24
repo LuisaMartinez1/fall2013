@@ -43,6 +43,25 @@ class Users {
                 }
         }
 
-}
+        static public function Blank()
+		{
+			return array('FirstName'=> null, 'LastName'=> null, 'password'=> null, 'UserType'=> null, 'FBID'=> null);
+		}
 
-		
+		static public function Validate($row)
+		{
+			$errors = array();
+			if(!$row['FirstName']) $errors['FirstName']="is required";
+			if(!$row['LastName']) $errors['LastName']="is required";
+			if(!is_numeric($row['UserType'])) $errors['UserType']="input has to be numeric";
+			
+			if(count($erros) == 0)
+			{
+				return false;
+			}else
+			{
+				return $errors;
+					
+			}
+		}
+	}
