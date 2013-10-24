@@ -15,7 +15,7 @@ switch ($action) {
                 break;
         
         case 'save':
-				$errors = Ussers::Validate($_REQUEST);
+				$errors = Users::Validate($_REQUEST);
 				if(!$errors)
 				{
 					$errors = Users::Save($_REQUEST);
@@ -27,17 +27,17 @@ switch ($action) {
 						die(); 
 				}
 				$models = $_REQUEST;
-				$view = 'new.php';
+				$view = 'edit.php';
                 break;
                 
         case 'edit':
                 $model = Users::Get($_REQUEST['id']);
-                $view  = 'details.php';                
+                $view  = 'edit.php';                
                 break;
                 
         case 'delete':
                 $model = Users::Get($_REQUEST['id']);
-                $view  = 'details.php';                
+                $view  = 'detelete.php';                
                 break;
         
         default:
