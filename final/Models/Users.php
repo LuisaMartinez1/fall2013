@@ -16,7 +16,7 @@ class Users {
                 else
                 {
                         return fetch_all('SELECT 
-    					U.id,FirstName, LastName,K.`Name` as `KeyWord`, password
+    					U.id,FirstName, LastName,K.`Name` as `UserType`, password
 							FROM
     					Fall2013_Users U
         					join
@@ -29,7 +29,7 @@ class Users {
 		
 	 	static public function Save($row)
         {
-                $sql = " Insert Into 2013Fall_Users (FirstName, LastName, password, KeyWord) "
+                $sql = " Insert Into Fall2013_Users (FirstName, LastName, password, KeyWords_id) "
                         .  " Values ('$row[FirstName]', '$row[LastName]', '$row[password]', '$row[UserType]') ";
                 $conn = GetConnection();
                 $conn->query($sql);
@@ -51,9 +51,9 @@ class Users {
 		static public function Validate($row)
 		{
 			$errors = array();
-			if(!$row['FirstName']) $errors['FirstName']="is required";
-			if(!$row['LastName']) $errors['LastName']="is required";
-			if(!is_numeric($row['UserType'])) $errors['UserType']="input has to be numeric";
+			if(!$row['FirstName']) $errors['FirstName']=" is required";
+			if(!$row['LastName']) $errors['LastName']=" is required";
+			if(!is_numeric($row['UserType'])) $errors['UserType']=" input has to be numeric";
 			
 			if(count($errors) == 0)
 			{

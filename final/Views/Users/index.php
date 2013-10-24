@@ -11,7 +11,7 @@ switch ($action) {
                 
         case 'new':
                 $model = Users::Blank();
-                $view  = 'new.php';                
+                $view  = 'edit.php';                
                 break;
         
         case 'save':
@@ -26,7 +26,7 @@ switch ($action) {
 						header("Location: ?");   
 						die(); 
 				}
-				$models = $_REQUEST;
+				$model = $_REQUEST;
 				$view = 'edit.php';
                 break;
                 
@@ -37,7 +37,7 @@ switch ($action) {
                 
         case 'delete':
                 $model = Users::Get($_REQUEST['id']);
-                $view  = 'detelete.php';                
+                $view  = 'delete.php';                
                 break;
         
         default:
