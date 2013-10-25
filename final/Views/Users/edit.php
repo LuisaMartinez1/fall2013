@@ -40,11 +40,11 @@
                         		<? if(isset($errors['password'])): ?><span class = "error"><?=$errors['password'] ?> </span> <? endif;?>
                         </div>
                 </div>
-                <div class="form-group <?=isset($errors['UserType']) ? 'has error' : ''   ?>">
+                <div class="form-group <?=isset($errors['KeyWords_id']) ? 'has error' : ''   ?>">
                         <label for="UserType" class="col-sm-2 control-label">User Type</label>
                         <div class="col-sm-10">
-                                <input type="text" name="UserType" id="UserType" placeholder="User Type" class="form-control " value="<?=$model['UserType']?>" />
-                        		<? if(isset($errors['UserType'])): ?><span class = "error"><?=$errors['UserType'] ?> </span> <? endif;?>
+                                <input type="text" name="UserType" id="UserType" placeholder="User Type" class="form-control " value="<?=$model['KeyWords_id']?>" />
+                        		<? if(isset($errors['KeyWords_id'])): ?><span class = "error"><?=$errors['KeyWords_id'] ?> </span> <? endif;?>
                         </div>
                 </div>
                 <div class="form-group">

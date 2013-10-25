@@ -15,12 +15,7 @@ class Users {
                 }
                 else
                 {
-                        return fetch_all('SELECT 
-    					U.id,FirstName, LastName,K.`Name` as `UserType`, password
-							FROM
-    					Fall2013_Users U
-        					join
-						Fall2013_KeyWords K on U.KeyWords_id = K.id ');                        
+                        return fetch_all('SELECT * FROM Fall2013_Users ');                        
                 }
 				
 					
@@ -30,7 +25,7 @@ class Users {
 	 	static public function Save($row)
         {
                 $sql = " Insert Into Fall2013_Users (FirstName, LastName, password, KeyWords_id) "
-                        .  " Values ('$row[FirstName]', '$row[LastName]', '$row[password]', '$row[UserType]') ";
+                        .  " Values ('$row[FirstName]', '$row[LastName]', '$row[password]', '$row[KeyWords_id]') ";
                 $conn = GetConnection();
                 $conn->query($sql);
                 $error = $conn->error;                
@@ -45,7 +40,7 @@ class Users {
 
         static public function Blank()
 		{
-			return array('FirstName'=> null, 'LastName'=> null, 'password'=> null, 'UserType'=> null, 'FBID'=> null);
+			return array('FirstName'=> null, 'LastName'=> null, 'password'=> null, 'KeyWords_id'=> null, 'FBID'=> null);
 		}
 
 		static public function Validate($row)
@@ -53,7 +48,7 @@ class Users {
 			$errors = array();
 			if(!$row['FirstName']) $errors['FirstName']=" is required";
 			if(!$row['LastName']) $errors['LastName']=" is required";
-			if(!is_numeric($row['UserType'])) $errors['UserType']=" input has to be numeric";
+			if(!is_numeric($row['KeyWords_id'])) $errors['KeyWords_id'] = " input has to be numeric";
 			
 			if(count($errors) == 0)
 			{
