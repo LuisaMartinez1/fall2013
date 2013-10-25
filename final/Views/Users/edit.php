@@ -43,7 +43,7 @@
                 <div class="form-group <?=isset($errors['KeyWords_id']) ? 'has error' : ''   ?>">
                         <label for="UserType" class="col-sm-2 control-label">User Type</label>
                         <div class="col-sm-10">
-                                <input type="text" name="UserType" id="UserType" placeholder="User Type" class="form-control " value="<?=$model['KeyWords_id']?>" />
+                                <input type="text" name="KeyWords_id" id="KeyWords_id" placeholder="User Type" class="form-control " value="<?=$model['KeyWords_id']?>" />
                         		<? if(isset($errors['KeyWords_id'])): ?><span class = "error"><?=$errors['KeyWords_id'] ?> </span> <? endif;?>
                         </div>
                 </div>
