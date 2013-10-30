@@ -4,20 +4,20 @@ include_once '../../inc/_global.php';
 
 switch ($action) {
         case 'details':
-                $model = Users::Get($_REQUEST['id']);
+                $model = Emails::Get($_REQUEST['id']);
                 $view  = 'details.php';                
                 break;
                 
         case 'new':
-                $model = Users::Blank();
+                $model = Emails::Blank();
                 $view  = 'edit.php';                
                 break;
         
         case 'save':
-				$errors = Users::Validate($_REQUEST);
+				$errors = Emails::Validate($_REQUEST);
 				if(!$errors)
 				{
-					$errors = Users::Save($_REQUEST);
+					$errors = Emails::Save($_REQUEST);
 				}
                
 				if(!$errors)
@@ -30,17 +30,17 @@ switch ($action) {
                 break;
                 
         case 'edit':
-                $model = Users::Get($_REQUEST['id']);
+                $model = Emails::Get($_REQUEST['id']);
                 $view  = 'edit.php';                
                 break;
                 
         case 'delete':
-                $model = Users::Get($_REQUEST['id']);
+                $model =Emails::Get($_REQUEST['id']);
                 $view  = 'delete.php';                
                 break;
         
         default:
-                $model = Users::Get();
+                $model = Emails::Get();
                 $view  = 'lists.php';                
                 break;
 }
