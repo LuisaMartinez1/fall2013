@@ -16,7 +16,7 @@ class Emails {
                 else
                 {
                         return fetch_all('SELECT 
-					    U.id, U.Email, Us.`LastName` as `User`, ET.`EmailType` as `EmailType`
+					    U.id, U.Email, Us.`LastName` as `Users_id`, ET.`EmailType` as `Email_Types_id`
 							FROM
 					    Fall2013_Emails U
 					        join
@@ -26,5 +26,68 @@ class Emails {
                 }
 							
         }
+	  static public function Save($row)
+      {
+        		$conn = GetConnection();
+        		$row2 = Users::Encode($row,$conn);
+				
+        	   if($row['id'])
+			   {
+			   	 $sql = " UPDATE  Fall2013_Emails " 
+			   	 . " Set Users_id = '$row2[Users_id]','Email='$row2[Email]', Email_Types_id='$row2[Email_Types_id]' " 
+			   	 . " WHERE id=$row2[id] " ;
+			   }
+			   else {
+				   $sql = " Insert Into Fall2013_Emails (Users_id, Email, EmailTypes_id) "
+                        .  " Values ('$row2[Users_id]', '$row2[Email]', '$row2[Email_Types_id]') ";
+			   }
+                
+               
+                $conn->query($sql);
+                $error = $conn->error;                
+                $conn->close();
+                
+                if($error){
+                        return array('db_error' => $error);
+                }else {
+                        return false;
+                }
+       }
+
+        static public function Blank()
+		{
+			return array('id'=>null,'Users_id'=> null, 'Email'=> null, 'Email_Types_id'=> null);
+		}
+
+		static public function Validate($row)
+		{
+			$errors = array();
+			if(!is_numeric($row['Users_id'])) $errors['Users_id'] = " input has to be numeric";
+			if(!$row['Email']) $errors['Email']=" is required";
+			if(!$row['Email_Types_id']) $errors['Email_Types_id']=" is required";
+			
+			
+			if(count($errors) == 0)
+			{
+				return false;
+			}else
+			{
+				return $errors;
+					
+			}
+			
+		}
+	static function Encode($row, $conn)
+	{
+			
+				$row2 = array();
+				foreach($row as $key => $value)
+				{
+					$row2[$key] = $conn->real_escape_string($value);
+				}
+				return $row2;
+				
+	}
+	
 
 }
