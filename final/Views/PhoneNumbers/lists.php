@@ -2,6 +2,8 @@
 <div class="container">
 	<h2>Phone Numbers</h2>
 	
+	<a href="?action=new">Add Phone Numbers</a>
+	
 	<table class = "table table-hover  table-striped table-bordered">
 		<thead>
 		<tr>
@@ -14,11 +16,13 @@
 		<tbody>
 		<? foreach ($model as $rs): ?>
 			<tr>
-				<td><?=$rs['User']?></td>
-				<td><?=$rs['Type']?></td>
+				<td><?=$rs['Users_id']?></td>
+				<td><?=$rs['PhoneTypes_id']?></td>
 				<td><?=$rs['value']?></td>
 				<td>
-					
+					<a class="glyphicon glyphicon-file" href="?action=details&id=<?=$rs['id']?>"></a>
+                    <a class="glyphicon glyphicon-pencil" href="?action=edit&id=<?=$rs['id']?>"></a>
+                   	<a class="glyphicon glyphicon-trash" href="?action=delete&id=<?=$rs['id']?>"></a>		
 				</td>
 			</tr>	
 		<? endforeach?>

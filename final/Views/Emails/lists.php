@@ -2,6 +2,8 @@
 <div class="container">
 	<h2>Email Addresses</h2>
 	
+	<a href="?action=new">Add Email</a>
+	
 	<table class = "table table-hover  table-striped table-bordered">
 		<thead>
 		<tr>
@@ -16,9 +18,9 @@
 			<tr>
 				<td><?=$rs['Users_id']?></td>
 				<td><?=$rs['Email']?></td>
-				<td><?=$rs['Email_Types_id']?></td>
+				<td><?=$rs['EmailTypes_id']?></td>
 				<td>
-					<a class="glyphicon glyphicon-file" href="?action=details&id=<?=$rs['id']?>" data-toggle ="modal" data-target="#myModal"></a>
+					<a class="glyphicon glyphicon-file" href="?action=details&id=<?=$rs['id']?>"></a>
                     <a class="glyphicon glyphicon-pencil" href="?action=edit&id=<?=$rs['id']?>"></a>
                    	<a class="glyphicon glyphicon-trash" href="?action=delete&id=<?=$rs['id']?>"></a>			
 				</td>

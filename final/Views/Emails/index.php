@@ -7,7 +7,7 @@ switch ($action) {
                 $model = Emails::Get($_REQUEST['id']);
                 $view  = 'details.php';                
                 break;
-                
+                 
         case 'new':
                 $model = Emails::Blank();
                 $view  = 'edit.php';                

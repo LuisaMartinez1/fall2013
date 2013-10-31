@@ -8,7 +8,7 @@ class Users {
         
         static public function Get($id=null)
         {
-           
+                
                 if(isset($id))
                 {
                         return fetch_one("SELECT * FROM Fall2013_Users WHERE id=$id");                        
@@ -85,6 +85,20 @@ class Users {
 				}
 				return $row2;
 				
+	}
+	static public function Delete($id)
+	{
+				$conn = GetConnection();
+        		$sql = "DELETE From Fall2013_Users WHERE id =$id";
+				
+		        $conn->query($sql);
+                $error = $conn->error;                
+                $conn->close();
+                if($error){
+                        return array('db_error' => $error);
+                }else {
+                        return false;
+                }		
 	}
 	
 }

@@ -16,7 +16,7 @@ class Emails {
                 else
                 {
                         return fetch_all('SELECT 
-					    U.id, U.Email, Us.`LastName` as `Users_id`, ET.`EmailType` as `Email_Types_id`
+					    U.id, U.Email, Us.`LastName` as `Users_id`, ET.`EmailType` as `EmailTypes_id`
 							FROM
 					    Fall2013_Emails U
 					        join
@@ -34,12 +34,12 @@ class Emails {
         	   if($row['id'])
 			   {
 			   	 $sql = " UPDATE  Fall2013_Emails " 
-			   	 . " Set Users_id = '$row2[Users_id]','Email='$row2[Email]', Email_Types_id='$row2[Email_Types_id]' " 
+			   	 . " Set Users_id = '$row2[Users_id]','Email='$row2[Email]', Email_Types_id='$row2[EmailTypes_id]' " 
 			   	 . " WHERE id=$row2[id] " ;
 			   }
 			   else {
 				   $sql = " Insert Into Fall2013_Emails (Users_id, Email, EmailTypes_id) "
-                        .  " Values ('$row2[Users_id]', '$row2[Email]', '$row2[Email_Types_id]') ";
+                        .  " Values ('$row2[Users_id]', '$row2[Email]', '$row2[EmailTypes_id]') ";
 			   }
                 
                
@@ -56,7 +56,7 @@ class Emails {
 
         static public function Blank()
 		{
-			return array('id'=>null,'Users_id'=> null, 'Email'=> null, 'Email_Types_id'=> null);
+			return array('id'=>null,'Users_id'=> null, 'Email'=> null, 'EmailTypes_id'=> null);
 		}
 
 		static public function Validate($row)
@@ -64,7 +64,7 @@ class Emails {
 			$errors = array();
 			if(!is_numeric($row['Users_id'])) $errors['Users_id'] = " input has to be numeric";
 			if(!$row['Email']) $errors['Email']=" is required";
-			if(!$row['Email_Types_id']) $errors['Email_Types_id']=" is required";
+			if(!$row['EmailTypes_id']) $errors['EmailTypes_id']=" is required";
 			
 			
 			if(count($errors) == 0)

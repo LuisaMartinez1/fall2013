@@ -2,16 +2,20 @@
 include_once '../../inc/_global.php';
 
 @$action = $_REQUEST['action'];
+@$format = $_REQUEST['format'];
+
 
 switch ($action) {
         case 'details':
                 $model = Users::Get($_REQUEST['id']);
-                $view  = 'details.php';                
+                $view  = 'details.php';     
+				$title = "Details for: $model[FirstName] $model[LastName]";           
                 break;
                 
         case 'new':
                 $model = Users::Blank();
-                $view  = 'edit.php';                
+                $view  = 'edit.php';    
+				$title = "Create new User";             
                 break;
         
         case 'save':
@@ -28,23 +32,46 @@ switch ($action) {
 				}
 				$model = $_REQUEST;
 				$view = 'edit.php';
+				$title = "Edit: $model[FirstName] $model[LastName]";           
+				
                 break;
                 
         case 'edit':
                 $model = Users::Get($_REQUEST['id']);
-                $view  = 'edit.php';                
+                $view  = 'edit.php'; 
+				$title = "Edit: $model[FirstName] $model[LastName]";                  
                 break;
                 
         case 'delete':
-                $model = Users::Get($_REQUEST['id']);
-                $view  = 'delete.php';                
+				if(isset($_POST['id']))
+				{
+					$errors = Users::Delete($_REQUEST['id']);
+			
+					if(!$errors)
+					{
+						header("Location: ?");   
+						die(); 
+					}
+			
+				}
+                            
                 break;
         
         default:
                 $model = Users::Get();
-                $view  = 'lists.php';                
+                $view  = 'lists.php';      
+				$title = 'Users';             
                 break;
 }
 
+switch ($format){
+	case 'dialog':
+		include '../Shared/_DialogLayout.php';
+		break;
+	
+	default:
+		include '../Shared/_Layout.php';
+		break;
+}
 
-include '../Shared/_Layout.php';
+
