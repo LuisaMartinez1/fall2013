@@ -15,7 +15,7 @@ switch ($action) {
         case 'new':
                 $model = Users::Blank();
                 $view  = 'edit.php';    
-				$title = "Create new User";             
+				$title = "Create New User";             
                 break;
         
         case 'save':
@@ -43,24 +43,23 @@ switch ($action) {
                 break;
                 
         case 'delete':
-				if(isset($_POST['id']))
-				{
-					$errors = Users::Delete($_REQUEST['id']);
-			
-					if(!$errors)
-					{
-						header("Location: ?");   
-						die(); 
-					}
-			
-				}
-                            
+				
+				if(isset($_POST['id'])){
+                        $errors = Users::Delete($_REQUEST['id']);                        
+                        if(!$errors){
+                                header("Location: ?");
+                                die();
+                        }                                                        
+                }
+                $model = Users::Get($_REQUEST['id']);
+                $view         = 'delete.php';                                        
+                $title        = "Edit: $model[FirstName] $model[LastName]"        ;        
                 break;
         
         default:
                 $model = Users::Get();
-                $view  = 'lists.php';      
-				$title = 'Users';             
+                $view         = 'lists.php';
+                $title        = 'Users';                
                 break;
 }
 

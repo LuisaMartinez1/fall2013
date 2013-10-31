@@ -89,7 +89,7 @@ class Users {
 	static public function Delete($id)
 	{
 				$conn = GetConnection();
-        		$sql = "DELETE From Fall2013_Users WHERE id =$id";
+        		$sql  = "DELETE From Fall2013_Users WHERE id=$id";
 				
 		        $conn->query($sql);
                 $error = $conn->error;                
