@@ -35,7 +35,7 @@
                         </div>
                 </div>
                 <div class="form-group <?=isset($errors['EmailTypes_id']) ? 'has error' : ''   ?>">
-                        <label for="Email_Types_id" class="col-sm-2 control-label">Email_Types_id</label>
+                        <label for="Email_Types_id" class="col-sm-2 control-label">EmailType_id</label>
                         <div class="col-sm-10">
                                 <input type="EmailTypes_id" name="EmailTypes_id" id="EmailTypes_id" placeholder="EmailTypes_id" class="form-control " value="<?=$model['EmailTypes_id']?>" />
                         		<? if(isset($errors['EmailTypes_id'])): ?><span class = "error"><?=$errors['EmailTypes_id'] ?> </span> <? endif;?>

@@ -87,5 +87,20 @@ class PhoneNumbers{
 					return $row2;
 					
 		}
+		static public function Delete($id)
+		{
+				$conn = GetConnection();
+                $sql =  " DELETE From Fall2013_PhoneNumbers   WHERE id=$id ";
+                                
+                $conn->query($sql);
+                $error = $conn->error;                
+                $conn->close();
+              
+                if($error){
+                        return array('db_error' => $error);
+                }else {
+                        return false;
+                }                	
+	}
 		
 }

@@ -1,7 +1,7 @@
 <div class ="container">
 	
 		<h3>
-			Are you sure you want to delete <?=$model['Email'] ?> 
+			Are you sure you want to delete your feedback ?
 		</h3>
 		
     <form action ="?action=delete" method ="post">

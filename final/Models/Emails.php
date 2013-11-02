@@ -34,7 +34,7 @@ class Emails {
         	   if($row['id'])
 			   {
 			   	 $sql = " UPDATE  Fall2013_Emails " 
-			   	 . " Set Users_id = '$row2[Users_id]','Email='$row2[Email]', Email_Types_id='$row2[EmailTypes_id]' " 
+			   	 . " Set Users_id ='$row2[Users_id]', Email='$row2[Email]', EmailTypes_id='$row2[EmailTypes_id]' " 
 			   	 . " WHERE id=$row2[id] " ;
 			   }
 			   else {

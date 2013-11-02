@@ -89,16 +89,17 @@ class Users {
 	static public function Delete($id)
 	{
 				$conn = GetConnection();
-        		$sql  = "DELETE From Fall2013_Users WHERE id=$id";
-				
-		        $conn->query($sql);
+                $sql =  " DELETE From Fall2013_Users  WHERE id=$id ";
+                                
+                $conn->query($sql);
                 $error = $conn->error;                
                 $conn->close();
+              
                 if($error){
                         return array('db_error' => $error);
                 }else {
                         return false;
-                }		
+                }                	
 	}
 	
 }
