@@ -2,6 +2,8 @@
 <div class="container">
 	<h2>Users Wish List</h2>
 	
+	<a href="?action=new">Add a Wish List</a>
+
 	<table class = "table table-hover  table-striped table-bordered">
 		<thead>
 		<tr>
@@ -13,16 +15,21 @@
 		<tbody>
 		<? foreach ($model as $rs): ?>
 			<tr>
-				<td><?=$rs['User']?></td>
-				<td><?=$rs['Item']?></td>
+				<td><?=$rs['Users_id']?></td>
+				<td><?=$rs['Fall2013_Items_id']?></td>
 				<td>
-					
+					<a class="glyphicon glyphicon-file" href="?action=details&id=<?=$rs['id']?>&format=dialog" data-toggle="modal" data-target="#myModal"></a>
+                    <a class="glyphicon glyphicon-pencil" href="?action=edit&id=<?=$rs['id']?>&format=dialog" data-toggle="modal" data-target="#myModal"></a>
+                    <a class="glyphicon glyphicon-trash" href="?action=delete&id=<?=$rs['id']?>&format=dialog" data-toggle="modal" data-target="#myModal"></a>
 				</td>
 			</tr>	
 		<? endforeach?>
 		</tbody>
 	</table>
 </div>
+
+<div id ="myModal" class="modal fade"></div>
+
 <? function Scripts(){ ?>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
 	<script type="text/javascript">
