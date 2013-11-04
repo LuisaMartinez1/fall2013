@@ -54,8 +54,8 @@
               <ul class="dropdown-menu">
                 <li><a href="../Categories/">Categories</a></li>
                 <li><a href="../Items/">Items</a></li>
-                <li><a href="../ProductKeyWords/">Product Key Wordd</a></li>
-                <li><a href = "../CreditCard/">Credit Card</a></li>
+                <li><a href="../ProductKeyWords/">Product Key Words</a></li>
+                <li><a href = "../CreditCard/">Payment Method</a></li>
                 <li><a href= "../Keywords/">Keywords</a></li>
                 <li><a href= "../OrderItem/">Ordered Items</a></li>
                 <li><a href= "../Shipments/">Shipments</a></li>

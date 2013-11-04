@@ -1,9 +1,7 @@
 <link href="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" />
 <div class="container">
 	<h2>Users</h2>
-	
-	<a href="?action=new">Add Contact</a>
-	
+	<a href="?action=new">Add Contact</a>s
 	<table class = "table table-hover  table-striped table-bordered">
 		<thead>
 		<tr>

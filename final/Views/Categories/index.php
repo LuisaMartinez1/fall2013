@@ -42,7 +42,6 @@ switch ($action) {
                 break;
                 
         case 'delete':
-				
 				if(isset($_POST['id'])){
                         $errors = Categories::Delete($_REQUEST['id']);                        
                         if(!$errors){
@@ -52,7 +51,7 @@ switch ($action) {
                 }
                 $model = Categories::Get($_REQUEST['id']);
                 $view         = 'delete.php';                                        
-                $title        = "Edit: $model[CategoryName]"        ;        
+                $title        = "Edit: $model[CategoryName]";        
                 break;
         
         default:

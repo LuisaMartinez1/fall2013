@@ -81,7 +81,7 @@ class Categories {
 	static public function Delete($id)
 	{
 				$conn = GetConnection();
-                $sql =  " DELETE From SELECT * FROM Fall2013_Categoriess  WHERE id=$id ";
+                $sql =  " DELETE From Fall2013_Categories  WHERE id=$id ";
                                 
                 $conn->query($sql);
                 $error = $conn->error;                
