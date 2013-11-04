@@ -25,7 +25,7 @@ class CreditCard {
 static public function Save($row)
         {
         		$conn = GetConnection();
-        		$row2 = Users::Encode($row,$conn);
+        		$row2 =  CreditCard::Encode($row,$conn);
 				
         	   if($row['id'])
 			   {

@@ -28,7 +28,7 @@ class Orders {
 static public function Save($row)
         {
         		$conn = GetConnection();
-        		$row2 = Users::Encode($row,$conn);
+        		$row2 = Orders::Encode($row,$conn);
 				
         	   if($row['id'])
 			   {

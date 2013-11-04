@@ -30,7 +30,7 @@ class Addresses {
 static public function Save($row)
         {
         		$conn = GetConnection();
-        		$row2 = Users::Encode($row,$conn);
+        		$row2 = Addresses::Encode($row,$conn);
 				
         	   if($row['id'])
 			   {

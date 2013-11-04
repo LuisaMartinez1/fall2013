@@ -26,7 +26,7 @@ class Suppliers {
 static public function Save($row)
         {
         		$conn = GetConnection();
-        		$row2 = Users::Encode($row,$conn);
+        		$row2 = Suppliers::Encode($row,$conn);
 				
         	   if($row['id'])
 			   {

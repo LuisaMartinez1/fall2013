@@ -28,7 +28,7 @@ class WishList {
 		static public function Save($row)
         {
         		$conn = GetConnection();
-        		$row2 = Users::Encode($row,$conn);
+        		$row2 = WishList::Encode($row,$conn);
 				
         	   if($row['id'])
 			   {

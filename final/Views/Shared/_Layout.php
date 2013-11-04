@@ -62,8 +62,7 @@
                 <li><a href= "../Suppliers/">Suppliers</a></li>
 				<li><a href= "../AddressTypes/">AddressTypes</a></li>   
 				<li><a href= "../PhoneTypes/">PhoneTypes</a></li>     
-				<li><a href= "../EmailTypes/">EmailTypes</a></li> 
-				<li><a href= "../ItemsSold/">Number Of Items Sold</a></li>   
+				<li><a href= "../EmailTypes/">EmailTypes</a></li>   
 				<li><a href= "../Inventory/">Inventory</a></li>   	                                   
               </ul>
              </li>
