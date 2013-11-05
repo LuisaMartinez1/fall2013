@@ -18,6 +18,12 @@ class Keywords {
                 }
 					
         }
+	static public function GetSelectListFor($id)
+   {
+
+   			return fetch_all("SELECT id, Name FROM Fall2013_KeyWords WHERE `parent_id`=$id ");
+   }
+		
 	 	static public function Save($row)
         {
         		$conn = GetConnection();

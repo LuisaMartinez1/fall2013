@@ -25,7 +25,7 @@ class AddressTypes {
 				
         	   if($row['id'])
 			   {
-			   	 $sql = " UPDATE Fall2013_AddressTypes " 
+			   	 $sql = " UPDATE  Fall2013_AddressTypes " 
 			   	 . " Set AddressType='$row2[AddressType]' " 
 			   	 . " WHERE id=$row2[id] " ;
 			   }

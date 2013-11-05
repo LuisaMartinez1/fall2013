@@ -1,7 +1,24 @@
 <link href="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" />
+<style>
+   tr.success, tr.success td{
+		background-color: #00AA00;
+}
+</style>
 <div class="container">
 	<h2>Users</h2>
-	<a href="?action=new">Add Contact</a>s
+	 <? if(isset($_REQUEST['status']) && $_REQUEST['status'] == 'Saved'): ?>
+
+ <div class="alert alert-success">
+
+      <button type="button" class="close" aria-hidden="true">&times;</button>
+
+      <b>Success!</b> You're User has been saved.
+
+   </div>
+
+  <? endif; ?>
+	
+	<a href="?action=new">Add Contact</a>
 	<table class = "table table-hover  table-striped table-bordered">
 		<thead>
 		<tr>
@@ -13,7 +30,7 @@
 		</thead>
 		<tbody>
 		<? foreach ($model as $rs): ?>
-			<tr>
+			<tr class="<?= $rs['id']==$_REQUEST['id'] ? 'success' : '' ?>  ">
 				<td><?=$rs['FirstName']?></td>
 				<td><?=$rs['LastName']?></td>
 				<td><?=$rs['KeyWords_id']?></td>
@@ -30,12 +47,17 @@
 
 <div id ="myModal" class="modal fade"></div>
 	
-</div>
 
 <? function Scripts(){ ?>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
 	<script type="text/javascript">
+	$(function(){
 		$(".table").dataTable();
+		 $(".alert .close").click(function(){
+		 		$(this).closest(".alert").slideUp();
+		 	 });
+	})
+		
 	</script>
 <? } ?>
 	

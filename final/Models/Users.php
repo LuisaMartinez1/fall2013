@@ -11,7 +11,13 @@ class Users {
                 
                 if(isset($id))
                 {
-                        return fetch_one("SELECT * FROM Fall2013_Users WHERE id=$id");                        
+                	$sql = "SELECT  U.* , K.Name as KeyWords_id
+                			FROM 
+                			Fall2013_Users U
+                        	Join Fall2013_KeyWords  K ON U.KeyWords_id = K.id
+                        				 WHERE U.id=$id
+                        				 ";
+                        return fetch_one($sql);                              
                 }
                 else
                 {
@@ -60,9 +66,10 @@ class Users {
 		static public function Validate($row)
 		{
 			$errors = array();
+			if(!$row['KeyWords_id']) $errors['KeyWords_id']=" is required";
 			if(!$row['FirstName']) $errors['FirsttName']=" is required";
 			if(!$row['LastName']) $errors['LastName']=" is required";
-			if(!is_numeric($row['KeyWords_id'])) $errors['KeyWords_id'] = " input has to be numeric";
+		
 			
 			
 			if(count($errors) == 0)

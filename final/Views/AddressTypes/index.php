@@ -33,7 +33,6 @@ switch ($action) {
 				$model = $_REQUEST;
 				$view = 'edit.php';
 				$title = "Edit: $model[AddressType] ";           
-				
                 break;
                 
         case 'edit':

@@ -3,6 +3,5 @@
          <dt>id</dt>
          <dd><?=$model['id']?></dd>
          <dt>Name</dt>
-         <dd><?=$model['AddressType']?></dd>
-        
+         <dd><?=$model['AddressType']?></dd>       
 </div>
