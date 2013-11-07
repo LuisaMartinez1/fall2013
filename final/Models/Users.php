@@ -11,9 +11,9 @@ class Users {
                 
                 if(isset($id))
                 {
-                	$sql = "SELECT  U.* , K.Name as KeyWords_id
+                	$sql = "SELECT  U.* , K.Name as `KeyWords`
                 			FROM 
-                			Fall2013_Users U
+                			Fall2013_Users U 
                         	Join Fall2013_KeyWords  K ON U.KeyWords_id = K.id
                         				 WHERE U.id=$id
                         				 ";
@@ -21,12 +21,10 @@ class Users {
                 }
                 else
                 {
-                        return fetch_all('SELECT 
-    					U.id,FirstName, LastName,K.`Name` as `KeyWords_id`, password
-							FROM
-    					Fall2013_Users U
-        					join
-						Fall2013_KeyWords K on U.KeyWords_id = K.id ');                        
+                        return fetch_all('SELECT  U.* , K.Name as `KeyWords_id`
+                			FROM 
+                			Fall2013_Users U
+                        	Join Fall2013_KeyWords  K ON U.KeyWords_id = K.id ');                        
                 }
 					
         }
