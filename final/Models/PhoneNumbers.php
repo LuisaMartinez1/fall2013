@@ -9,7 +9,16 @@ class PhoneNumbers{
            
                 if(isset($id))
                 {
-                        return fetch_one("SELECT * FROM Fall2013_PhoneNumbers WHERE id=$id");                        
+                		$sql = "SELECT 
+					    U.*, Us.`LastName` as `Users`, P.`nameType` as `PhoneTypes`
+							FROM
+					    Fall2013_PhoneNumbers U
+					        join
+						Fall2013_Users Us on U.Users_id = Us.id 
+							join 
+						Fall2013_PhoneTypes P on U.PhoneTypes_id = P.id
+						WHERE U.id=$id";
+                        return fetch_one($sql);                        
                 }
                 else
                 {

@@ -26,8 +26,8 @@ switch ($action) {
                
 				if(!$errors)
 				{
-						header("Location: ?");   
-						die(); 
+						header("Location: ?status=Saved&id=$_REQUEST[id]");   
+						die();  
 				}
 				$model = $_REQUEST;
 				$view = 'edit.php';

@@ -26,7 +26,7 @@ switch ($action) {
                
 				if(!$errors)
 				{
-						header("Location: ?");   
+						header("Location: ?status=Saved&id=$_REQUEST[id]");   
 						die(); 
 				}
 				$model = $_REQUEST;

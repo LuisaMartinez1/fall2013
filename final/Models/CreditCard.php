@@ -10,7 +10,14 @@ class CreditCard {
            
                 if(isset($id))
                 {
-                        return fetch_one("SELECT * FROM Fall2013_PaymentCreditCardTypes WHERE id=$id");                        
+                		$sql = "SELECT 
+					    U.*, Us.`LastName` as `Fall2013_Users`
+						FROM
+					    Fall2013_PaymentCreditCardTypes U
+					        join
+						Fall2013_Users Us on U.Fall2013_Users_id = Us.id
+						WHERE U.id=$id";
+                        return fetch_one($sql);                        
                 }
                 else
                 {

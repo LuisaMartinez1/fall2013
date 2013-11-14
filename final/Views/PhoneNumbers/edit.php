@@ -21,18 +21,28 @@
         		<input type="hidden" name = "id" value = "<?=$model['id']?>" />
                 
                 <div class="form-group <?=isset($errors['Users_id']) ? 'has error' : ''   ?>">
-                        <label for="Users_id" class="col-sm-2 control-label">Users_id</label>
+                        <label for="Users_id" class="col-sm-2 control-label">Users</label>
                         <div class="col-sm-10">
-                                <input type="text" name="Users_id" id="Users_id" placeholder="Users_id" class="form-control " value="<?=$model['Users_id']?>" />
-                        		<? if(isset($errors['Users_id'])): ?><span class = "error"><?=$errors['Users_id'] ?> </span> <? endif;?>
+                                <select name="Users_id" id="Users_id" class="form-control" >
+                                        <? foreach(Users::Get() as $keywordRs): ?>
+                                                <option value="<?=$keywordRs['id']?>"><?=$keywordRs['LastName']?></option>
+                                        <? endforeach; ?>
+                                </select>
+                        		
                         </div>
+                        <? if(isset($errors['Users_id'])): ?><span class = "error"><?=$errors['Users_id'] ?> </span> <? endif;?>
                 </div>
                 <div class="form-group <?=isset($errors['PhoneTypes_id']) ? 'has error' : ''   ?>">
                         <label for="PhoneTypes_id" class="col-sm-2 control-label">PhoneType</label>
                         <div class="col-sm-10">
-                                <input type="text" name="PhoneTypes_id" id="PhoneTypes_id" placeholder="PhoneTypes_id" class="form-control " value="<?=$model['PhoneTypes_id']?>" />
-                       			<? if(isset($errors['PhoneTypes_id'])): ?><span class = "error"><?=$errors['PhoneTypes_id'] ?> </span> <? endif;?>
+                                <select name="PhoneTypes_id" id="PhoneTypes_id" class="form-control" >
+                                        <? foreach(PhoneTypes::Get() as $keywordRs): ?>
+                                                <option value="<?=$keywordRs['id']?>"><?=$keywordRs['nameType']?></option>
+                                        <? endforeach; ?>
+                                </select>
+                       			
                         </div>
+                        <? if(isset($errors['PhoneTypes_id'])): ?><span class = "error"><?=$errors['PhoneTypes_id'] ?> </span> <? endif;?>
                 </div>
                 <div class="form-group <?=isset($errors['value']) ? 'has error' : ''   ?>">
                         <label for="Password" class="col-sm-2 control-label">value</label>
@@ -48,3 +58,9 @@
                 </div>
         </form>
 </div>
+<script type="text/javascript">
+        $(function(){
+                $("#PhoneTypes_id").val(<?=$model['PhoneTypes_id']?>);
+                $("#Users_id").val(<?=$model['Users_id']?>);
+        })
+</script>

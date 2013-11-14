@@ -2,8 +2,15 @@
 <style>
    .table tr.success2, .table tr.success2 td{
 		background-color: #FFAA00 !important;
-}
+		}
+		
+	#table-wrapper{
+			transition: width .5s;
+			-webkit-transition: width .5s, 
+		}
+
 </style>
+
 <div class="container">
 	<h2>Users</h2>
 	 <? if(isset($_REQUEST['status']) && $_REQUEST['status'] == 'Saved'): ?>
@@ -12,7 +19,9 @@
 			<b>Success!</b> Your User has been saved.
 		 </div>
 	<? endif; ?>
+	
 	<a href="?action=new">Add Contact</a>
+	<div id="table-wrapper" class"col-md-12">
 	<table class = "table table-hover  table-striped table-bordered">
 		<thead>
 		<tr>
@@ -24,38 +33,69 @@
 		</thead>
 		<tbody>
 		<? foreach ($model as $rs): ?>
-			<tr class="<?= $rs['id']==$_REQUEST['id'] ? 'success' : '' ?>  ">
-				<td><?=$rs['FirstName']?></td>
-				<td><?=$rs['LastName']?></td>
-				<td><?=$rs['KeyWords_id']?></td>
-				<td>
-	  				<a class="glyphicon glyphicon-file" href="?action=details&id=<?=$rs['id']?>&format=dialog" data-toggle="modal" data-target="#myModal"></a>
-                    <a class="glyphicon glyphicon-pencil" href="?action=edit&id=<?=$rs['id']?>&format=dialog" data-toggle="modal" data-target="#myModal"></a>
-                    <a class="glyphicon glyphicon-trash" href="?action=delete&id=<?=$rs['id']?>&format=dialog" data-toggle="modal" data-target="#myModal"></a>
-				</td>
-			</tr>	
+			<? include 'item.php'; ?>
 		<? endforeach?>
 		</tbody>
 	</table>
+  </div>
+  <div id ="details" class = "col-md-6"></div>
 </div>
+
 <div id ="myModal" class="modal fade"></div>
 	
-<? function Scripts(){ ?>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			$(".table").dataTable();
-			 $(".alert .close").click(function(){
-			 		$(this).closest(".alert").slideUp();
-			 	 });
-			 	 
-			 	 $(".table tr ").click(function(){
-			 	 	$(this).toggleClass("success2")
-			 	 });
-			 	 
-		})
-		
-	</script>
+ <? function Scripts(){ ?>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
+        <script type="text/javascript">
+        <script type = "" > 
+        $(function(){
+                $(".table").dataTable();
+                $(".alert .close").click(function(){
+                        $(this).closest(".alert").slideUp();
+                });
+                
+                /*
+                $(".table tr").click(function(){
+                });
+                */
+                $(".table a").click(function(){
+                        
+                        
+                        if($(this).closest("tr").hasClass("success2")){
+                                $(".success2").removeClass("success2");
+                                $("#table-wrapper").removeClass("col-md-6").addClass("col-md-12");
+                                $("#details").html('');                        
+                        }else{
+                                $(".success2").removeClass("success2");
+                                $(this).closest("tr").addClass("success2");
+                                $("#table-wrapper").removeClass("col-md-12").addClass("col-md-6");
+                                
+                                $("#details").load(this.href, {format: "plain"}, function(){
+                                        $("#details form").submit(HandleSubmit);                                        
+                                });                                
+                        }
+                        
+                        return false;
+                });
+                
+                var HandleSubmit = function (){
+                		var data = $(this).serializeArray();
+                		data.push({name:'format',value:'plain'});
+                        $.post(this.action, data, function(results){
+                        	if($(results).find("form").length)
+                        	{
+                        		$("#details").html($(results).html());
+                        	}else
+                        	{
+                        		$(".success2").replaceAll(results);
+                        	}
+                        	
+                        	
+                        });
+                       
+                        return false;
+                }
+        })
+        </script>
 <? } ?>
 	
 	

@@ -6,11 +6,11 @@
          <dd><?=$model['ItemNumber']?></dd>
          <dt>ItemPrice</dt>
          <dd><?=$model['ItemPrice']?></dd>
-         <dt>Inventories id</dt>
-         <dd><?=$model['Inventories_id']?></dd>
-         <dt>Categories id</dt>
-         <dd><?=$model['Categories_id']?></dd>
-         <dt>ProductKeyWords id</dt>
-         <dd><?=$model['ProductKeyWords_id']?></dd>
+         <dt>Inventory</dt>
+         <dd><?=$model['Inventories']?></dd>
+         <dt>Category</dt>
+         <dd><?=$model['Categories']?></dd>
+         <dt>ProductKeyWord</dt>
+         <dd><?=$model['ProductKeyWords']?></dd>
         </dl>
 </div>

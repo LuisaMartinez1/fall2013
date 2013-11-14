@@ -9,12 +9,8 @@ class Items {
            
                 if(isset($id))
                 {
-                        return fetch_one("SELECT * FROM Fall2013_Items  WHERE id=$id");                        
-                }
-                else
-                {
-                        return fetch_all('SELECT 
-						    U.id, ItemNumber, ItemName,ItemPrice, I.`Quantaty` as `Inventories_id`, C.`CategoryName` as `Categories_id`, PK.`Name` as `ProductKeyWords_id`,S.`NumberOfITemsSold` as `Fall2013_ItemsSold_id`
+                		$sql = "SELECT 
+						    U.*, I.`Quantaty` as `Inventories`, C.`CategoryName` as `Categories`, PK.`Name` as `ProductKeyWords`
 								FROM
 						    Fall2013_Items U
 						        join
@@ -22,9 +18,23 @@ class Items {
 								join 
 							Fall2013_Categories C on U.Categories_id = C.id
 								join 
-							Fall2013_ProductKeyWords PK on U.ProductKeyWords_id = PK.id
+							Fall2013_ProductKeyWords PK on U.ProductKeyWords_id = PK.id 
+							WHERE U.id=$id";
+							
+                        return fetch_one($sql);                        
+                }
+                else
+                {
+                        return fetch_all('SELECT 
+						    U.id, ItemNumber, ItemName,ItemPrice, I.`Quantaty` as `Inventories_id`, C.`CategoryName` as `Categories_id`, PK.`Name` as `ProductKeyWords_id`
+								FROM
+						    Fall2013_Items U
+						        join
+							Fall2013_Inventories I on U.Inventories_id = I.id 
 								join 
-							Fall2013_ItemsSold S on U.Fall2013_ItemsSold_id = S.id ');                        
+							Fall2013_Categories C on U.Categories_id = C.id
+								join 
+							Fall2013_ProductKeyWords PK on U.ProductKeyWords_id = PK.id ');                        
                 }
 		}		
 	static public function Save($row)
@@ -35,13 +45,13 @@ class Items {
         	   if($row['id'])
 			   {
 			   	 $sql = " UPDATE  Fall2013_Items " 
-			   	 . " Set ItemNumber='$row2[ItemNumber]', ItemName='$row2[ItemName]', ItemPrice='$row2[ItemPrice]',ProductKeyWords_id='$row2[ProductKeyWords_id]',Fall2013_ItemsSold_id='$row2[Fall2013_ItemsSold_id]',
+			   	 . " Set ItemNumber='$row2[ItemNumber]', ItemName='$row2[ItemName]', ItemPrice='$row2[ItemPrice]',ProductKeyWords_id='$row2[ProductKeyWords_id]',
 			   	     Categories_id='$row2[Categories_id]',Inventories_id='$row2[Inventories_id]'" 
 			   	 . " WHERE id=$row2[id] " ;
 			   }
 			   else {
-				   $sql = " Insert Into Fall2013_Items (ItemNumber, ItemName, ItemPrice, ProductKeyWords_id,Fall2013_ItemsSold_id,Categories_id,Inventories_id) "
-                        . " Values ('$row2[ItemNumber]', '$row2[ItemName]', '$row2[ItemPrice]','$row2[ProductKeyWords_id]','$row2[Fall2013_ItemsSold_id]','$row2[Categories_id]','$row2[Inventories_id]') ";
+				   $sql = " Insert Into Fall2013_Items (ItemNumber, ItemName, ItemPrice, ProductKeyWords_id,Categories_id,Inventories_id) "
+                        . " Values ('$row2[ItemNumber]', '$row2[ItemName]', '$row2[ItemPrice]','$row2[ProductKeyWords_id]','$row2[Categories_id]','$row2[Inventories_id]') ";
 			   }
                 
                
@@ -58,7 +68,7 @@ class Items {
 
         static public function Blank()
 		{
-			return array('id'=>null,'ItemNumber'=> null, 'ItemName'=> null, 'ItemPrice'=> null, 'Inventories_id'=> null, 'Fall2013_ItemsSold_id'=> null,'Categories_id'=> null,'ProductKeyWords_id'=> null );
+			return array('id'=>null,'ItemNumber'=> null, 'ItemName'=> null, 'ItemPrice'=> null, 'Inventories_id'=> null,'Categories_id'=> null,'ProductKeyWords_id'=> null );
 		}
 
 		static public function Validate($row)

@@ -15,8 +15,7 @@ class Users {
                 			FROM 
                 			Fall2013_Users U 
                         	Join Fall2013_KeyWords  K ON U.KeyWords_id = K.id
-                        				 WHERE U.id=$id
-                        				 ";
+                        	WHERE U.id=$id";
                         return fetch_one($sql);                              
                 }
                 else

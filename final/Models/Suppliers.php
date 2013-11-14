@@ -10,7 +10,14 @@ class Suppliers {
            
                 if(isset($id))
                 {
-                        return fetch_one("SELECT * FROM Fall2013_Supplier WHERE id=$id");                        
+                		$sql = "SELECT 
+						U.*,I.`ItemName` as `Fall2013_Items`
+							FROM
+						Fall2013_Supplier U 
+							join
+						Fall2013_Items I on U.Fall2013_Items_id = I.id 
+						 WHERE U.id=$id";
+                        return fetch_one($sql);                        
                 }
                 else
                 {
@@ -23,7 +30,7 @@ class Suppliers {
                 }
 		}				
 
-static public function Save($row)
+		static public function Save($row)
         {
         		$conn = GetConnection();
         		$row2 = Suppliers::Encode($row,$conn);

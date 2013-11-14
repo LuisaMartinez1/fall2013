@@ -3,8 +3,8 @@
          <dt>Shipment Number</dt>
          <dd><?=$model['ShipmentNumber']?></dd>
          <dt>Purchases id</dt>
-         <dd><?=$model['Purchases_id']?></dd>
+         <dd><?=$model['Purchases']?></dd>
          <dt>Addresses id</dt>
-         <dd><?=$model['Addresses_id']?></dd>
+         <dd><?=$model['Addresses']?></dd>
         
 </div>

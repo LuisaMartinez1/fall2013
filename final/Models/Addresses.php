@@ -11,7 +11,16 @@ class Addresses {
            
                 if(isset($id))
                 {
-                        return fetch_one("SELECT * FROM Fall2013_Addresses WHERE id=$id");                        
+                		$sql = "SELECT 
+			   			 U.*,US.LastName as `User`, AT.AddressType as `AddressTypes`
+							FROM
+						 Fall2013_Addresses U
+						        join
+						Fall2013_AddressTypes AT on U.AddressTypes_id = AT.id 
+								join
+						Fall2013_Users US on U.Users_id = US.id 
+						WHERE U.id=$id";
+                        return fetch_one($sql);                        
                 }
                 else
                 {

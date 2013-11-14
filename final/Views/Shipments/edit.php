@@ -28,18 +28,27 @@
                         </div>
                 </div>
                 <div class="form-group <?=isset($errors['Purchases_id']) ? 'has error' : ''   ?>">
-                        <label for="Purchases_id" class="col-sm-2 control-label">Purchases id</label>
+                        <label for="Purchases_id" class="col-sm-2 control-label">Purchases</label>
                         <div class="col-sm-10">
-                                <input type="text" name="Purchases_id" id="Purchases_id" placeholder="Purchases_id" class="form-control " value="<?=$model['Purchases_id']?>" />
-                       			<? if(isset($errors['Purchases_id'])): ?><span class = "error"><?=$errors['Purchases_id'] ?> </span> <? endif;?>
+                                 <select name="Purchases_id" id="Purchases_id" class="form-control" >
+                                        <? foreach(Orders::Get() as $keywordRs): ?>
+                                                <option value="<?=$keywordRs['id']?>"><?=$keywordRs['PurchaseNumber']?></option>
+                                        <? endforeach; ?>
+                                </select>
+                       			
                         </div>
+                        <? if(isset($errors['Purchases_id'])): ?><span class = "error"><?=$errors['Purchases_id'] ?> </span> <? endif;?>
                 </div>
                 <div class="form-group <?=isset($errors['Addresses_id']) ? 'has error' : ''   ?>">
                         <label for="Addresses_id" class="col-sm-2 control-label">Addresses id</label>
                         <div class="col-sm-10">
-                                <input type="Addresses_id" name="Addresses_id" id="Addresses_id" placeholder="Addresses_id" class="form-control " value="<?=$model['Addresses_id']?>" />
-                        		<? if(isset($errors['Addresses_id'])): ?><span class = "error"><?=$errors['Addresses_id'] ?> </span> <? endif;?>
+                        	<select name="Addresses_id" id="Addresses_id" class="form-control" >
+                               <? foreach(Addresses::Get() as $keywordRs): ?>
+                                                <option value="<?=$keywordRs['id']?>"><?=$keywordRs['City']?></option>
+                               <? endforeach; ?>	
+                            </select>	
                         </div>
+                        <? if(isset($errors['Addresses_id'])): ?><span class = "error"><?=$errors['Addresses_id'] ?> </span> <? endif;?>
                 </div>
                 <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
@@ -48,3 +57,9 @@
                 </div>
         </form>
 </div>
+<script type="text/javascript">
+        $(function(){
+                $("#Purchases_id").val(<?=$model['Purchases_id']?>);
+                 $("#Addresses_id").val(<?=$model['Addresses_id']?>);
+        })
+</script>

@@ -1,6 +1,17 @@
 <link href="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" />
+<style>
+   .table tr.success2, .table tr.success2 td{
+		background-color: #FFAA00 !important;
+}
+</style>
 <div class="container">
 	<h2>Categories</h2>
+	 <? if(isset($_REQUEST['status']) && $_REQUEST['status'] == 'Saved'): ?>
+		<div class="alert alert-success">
+			<button type="button" class="close" aria-hidden="true">&times;</button>
+			<b>Success!</b>category has been saved.
+		 </div>
+	<? endif; ?>
 	<a href="?action=new">Add Category</a>
 	<table class = "table table-hover  table-striped table-bordered">
 		<thead>
@@ -12,7 +23,7 @@
 		</thead>
 		<tbody>
 		<? foreach ($model as $rs): ?>
-			<tr>
+			<tr class="<?= $rs['id']==$_REQUEST['id'] ? 'success' : '' ?>  ">
 				<td><?=$rs['id']?></td>
 				<td><?=$rs['CategoryName']?></td>
 				<td>
@@ -30,7 +41,17 @@
 <? function Scripts(){ ?>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
 	<script type="text/javascript">
-		$(".table").dataTable();
+		$(function(){
+			$(".table").dataTable();
+			 $(".alert .close").click(function(){
+			 		$(this).closest(".alert").slideUp();
+			 	 });
+			 	 
+			 	 $(".table tr ").click(function(){
+			 	 	$(this).toggleClass("success2")
+			 	 });
+			 	 
+		})
 	</script>
 <? } ?>
 	

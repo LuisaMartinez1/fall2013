@@ -10,7 +10,16 @@ class Orders {
            
                 if(isset($id))
                 {
-                        return fetch_one("SELECT * FROM Fall2013_Orders WHERE id=$id");                        
+                		$sql = "SELECT 
+					    U.*, Us.`LastName` as `Users`, P.`Method` as `PaymentCreditCardTypes_id`
+						FROM
+					    Fall2013_Orders U
+					        join
+						Fall2013_Users Us on U.Users_id = Us.id 
+							join 
+						Fall2013_PaymentCreditCardTypes P on U.Fall2013_PaymentCreditCardTypes_id = P.id
+						WHERE U.id=$id";		
+                        return fetch_one($sql);                        
                 }
                 else
                 {
@@ -33,7 +42,7 @@ static public function Save($row)
         	   if($row['id'])
 			   {
 			   	 $sql = " UPDATE  Fall2013_Orders " 
-			   	 . " Set Users_id='$row2[Users_id]',PurchaseNumber='$row2[PurchaseNumber]',PurchaseNumber='$row2[PurchasedTotal]',PurchaseDate='$row2[PurchaseDate]', Fall2013_PaymentCreditCardTypes_id='$row2[Fall2013_PaymentCreditCardTypes_id]' " 
+			   	 . " Set Users_id='$row2[Users_id]',PurchaseNumber='$row2[PurchaseNumber]',PurchasedTotal='$row2[PurchasedTotal]',PurchaseDate='$row2[PurchaseDate]', Fall2013_PaymentCreditCardTypes_id='$row2[Fall2013_PaymentCreditCardTypes_id]' " 
 			   	 . " WHERE id=$row2[id] " ;
 			   }
 			   else {

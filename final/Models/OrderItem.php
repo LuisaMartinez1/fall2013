@@ -10,7 +10,16 @@ class OrderItem{
            
                 if(isset($id))
                 {
-                        return fetch_one("SELECT * FROM Fall2013_Order_Items WHERE id=$id");                        
+                		$sql = "SELECT
+						U.*, O.`PurchaseNumber` as `Orders`, I.`ItemName` as `Items`
+							FROM
+						Fall2013_Order_Items U
+							join 
+						Fall2013_Orders O on U.Orders_id = O.id
+							join
+						Fall2013_Items I on U.Items_id = I.id
+						WHERE U.id=$id";
+                        return fetch_one($sql);                        
                 }
                 else
                 {

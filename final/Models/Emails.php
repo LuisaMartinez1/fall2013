@@ -11,7 +11,16 @@ class Emails {
            
                 if(isset($id))
                 {
-                        return fetch_one("SELECT * FROM Fall2013_Emails WHERE id=$id");                        
+                	   $sql = "SELECT 
+					    U.*,Us.`LastName` as `Users`, ET.`EmailType` as `EmailTypes`
+							FROM
+					    Fall2013_Emails U
+					        join
+						Fall2013_Users Us on U.Users_id = Us.id 
+							join 
+						Fall2013_EmailTypes ET on U.EmailTypes_id = ET.id
+						WHERE U.id=$id";
+                        return fetch_one($sql);                        
                 }
                 else
                 {
@@ -88,6 +97,20 @@ class Emails {
 				return $row2;
 				
 	}
-	
+	static public function Delete($id)
+	{
+				$conn = GetConnection();
+                $sql =  " DELETE From Fall2013_Emails  WHERE id=$id ";
+                                
+                $conn->query($sql);
+                $error = $conn->error;                
+                $conn->close();
+              
+                if($error){
+                        return array('db_error' => $error);
+                }else {
+                        return false;
+                }                	
+	}
 
 }

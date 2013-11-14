@@ -18,7 +18,7 @@
 			<tr>
 				<td><?=$rs['Fall2013_Users_id']?></td>
 				<td><?=$rs['CreditCardHolderName']?></td>
-				<td><?=$rs['CreditCardNumber']?></td>
+				<td>XXXX-XXXX-XXXX-<?=substr($rs['CreditCardNumber'],-4);?></td>
 				<td><?=$rs['CreditExpirationDate']?></td>
 				<td><?=$rs['Method']?></td>
 				<td>

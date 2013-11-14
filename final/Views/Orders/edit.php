@@ -23,9 +23,14 @@
                 <div class="form-group <?=isset($errors['Users_id']) ? 'has error' : ''   ?>">
                         <label for="Users_id" class="col-sm-2 control-label">Users id</label>
                         <div class="col-sm-10">
-                                <input type="text" name="Users_id" id="Users_id" placeholder="Users_id" class="form-control " value="<?=$model['Users_id']?>" />
-                        		<? if(isset($errors['Users_id'])): ?><span class = "error"><?=$errors['Users_id'] ?> </span> <? endif;?>
+                                 <select name="Users_id" id="Users_id" class="form-control" >
+                                        <? foreach(Users::Get() as $keywordRs): ?>
+                                                <option value="<?=$keywordRs['id']?>"><?=$keywordRs['LastName']?></option>
+                                        <? endforeach; ?>
+                                </select>
                         </div>
+                        <? if(isset($errors['Users_id'])): ?><span class = "error"><?=$errors['Users_id'] ?> </span> <? endif;?>
+
                 </div>
                 <div class="form-group <?=isset($errors['PurchaseNumber']) ? 'has error' : ''   ?>">
                         <label for="PurchaseNumber" class="col-sm-2 control-label">Order Number</label>
@@ -52,9 +57,14 @@
                 <div class="form-group <?=isset($errors['Fall2013_PaymentCreditCardTypes_id']) ? 'has error' : ''   ?>">
                         <label for="Fall2013_PaymentCreditCardTypes_id" class="col-sm-2 control-label">Payment Method</label>
                         <div class="col-sm-10">
-                                <input type="text" name="Fall2013_PaymentCreditCardTypes_id" id="Fall2013_PaymentCreditCardTypes_id" placeholder="User Type" class="form-control " value="<?=$model['Fall2013_PaymentCreditCardTypes_id']?>" />
-                        		<? if(isset($errors['Fall2013_PaymentCreditCardTypes_id'])): ?><span class = "error"><?=$errors['Fall2013_PaymentCreditCardTypes_id'] ?> </span> <? endif;?>
+                                <select name="Fall2013_PaymentCreditCardTypes_id" id="Fall2013_PaymentCreditCardTypes_id" class="form-control" >
+                                        <? foreach(CreditCard::Get() as $keywordRs): ?>
+                                                <option value="<?=$keywordRs['id']?>"><?=$keywordRs['Method']?></option>
+                                        <? endforeach; ?>
+                                </select>
+                        		
                         </div>
+                        <? if(isset($errors['Fall2013_PaymentCreditCardTypes_id'])): ?><span class = "error"><?=$errors['Fall2013_PaymentCreditCardTypes_id'] ?> </span> <? endif;?>
                 </div>
                 <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
@@ -63,3 +73,9 @@
                 </div>
         </form>
 </div>
+<script type="text/javascript">
+        $(function(){
+                $("#Users_id").val(<?=$model['Users_id']?>);
+                $("#Fall2013_PaymentCreditCardTypes_id").val(<?=$model['Fall2013_PaymentCreditCardTypes_id']?>);
+        })
+</script>

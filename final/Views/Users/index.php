@@ -27,13 +27,22 @@ switch ($action) {
                
 				if(!$errors)
 				{
-						header("Location: ?status=Saved&id=$_REQUEST[id]");   
-						die(); 
+						if($format == 'plain')
+						{
+							$view = 'item.php';
+							$rs   = $_REQUEST;
+						}else
+						{
+							header("Location: ?status=Saved&id=$_REQUEST[id]");   
+							die();
+						}	
+						 
+				}else
+				{
+					$model = Users::Get($_REQUEST['id']);
+					$view = 'edit.php';
+					$title = "Edit: $model[FirstName] $model[LastName]";           
 				}
-				$model = $_REQUEST;
-				$view = 'edit.php';
-				$title = "Edit: $model[FirstName] $model[LastName]";           
-				
                 break;
                 
         case 'edit':
@@ -67,7 +76,9 @@ switch ($format){
 	case 'dialog':
 		include '../Shared/_DialogLayout.php';
 		break;
-	
+	case 'plain':
+		include $view;
+		break;
 	default:
 		include '../Shared/_Layout.php';
 		break;

@@ -1,9 +1,9 @@
 <div class="container">
         <dl class="dl-horizontal">
-         <dt>Users id</dt>
-         <dd><?=$model['Users_id']?></dd>
+         <dt>Users</dt>
+         <dd><?=$model['User']?></dd>
          <dt>AddressType</dt>
-         <dd><?=$model['AddressTypes_id']?></dd>
+         <dd><?=$model['AddressTypes']?></dd>
          <dt>Street</dt>
          <dd><?=$model['Street']?></dd>
          <dt>City</dt>

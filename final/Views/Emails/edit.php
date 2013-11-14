@@ -15,17 +15,20 @@
 			<? endforeach; ?>
 		</ul>
 	<?  endif; ?>
-	
-	
         <form action="?action=save" method="post" class="form-horizontal row">
         		<input type="hidden" name = "id" value = "<?=$model['id']?>" />
                 
                 <div class="form-group <?=isset($errors['Users_id']) ? 'has error' : ''   ?>">
-                        <label for="Users_id" class="col-sm-2 control-label">User id</label>
+                        <label for="Users_id" class="col-sm-2 control-label">User</label>
                         <div class="col-sm-10">
-                                <input type="text" name="Users_id" id="Users_id" placeholder="Users_id" class="form-control " value="<?=$model['Users_id']?>" />
-                        		<? if(isset($errors['Users_id'])): ?><span class = "error"><?=$errors['Users_id'] ?> </span> <? endif;?>
+                                <select name="Users_id" id="Users_id" class="form-control" >
+                                        <? foreach(Users::Get() as $keywordRs): ?>
+                                                <option value="<?=$keywordRs['id']?>"><?=$keywordRs['LastName']?></option>
+                                        <? endforeach; ?>
+                                </select>
+                        		
                         </div>
+                          <? if(isset($errors['Users_id'])): ?><span class = "error"><?=$errors['Users_id'] ?> </span> <? endif;?>
                 </div>
                 <div class="form-group <?=isset($errors['Email']) ? 'has error' : ''   ?>">
                         <label for="Email" class="col-sm-2 control-label">Email</label>
@@ -35,11 +38,15 @@
                         </div>
                 </div>
                 <div class="form-group <?=isset($errors['EmailTypes_id']) ? 'has error' : ''   ?>">
-                        <label for="Email_Types_id" class="col-sm-2 control-label">EmailType_id</label>
+                        <label for="Email_Types_id" class="col-sm-2 control-label">Email Type</label>
                         <div class="col-sm-10">
-                                <input type="EmailTypes_id" name="EmailTypes_id" id="EmailTypes_id" placeholder="EmailTypes_id" class="form-control " value="<?=$model['EmailTypes_id']?>" />
-                        		<? if(isset($errors['EmailTypes_id'])): ?><span class = "error"><?=$errors['EmailTypes_id'] ?> </span> <? endif;?>
+                                <select name="EmailTypes_id" id="EmailTypes_id" class="form-control" >
+                                        <? foreach(EmailTypes::Get() as $keywordRs): ?>
+                                                <option value="<?=$keywordRs['id']?>"><?=$keywordRs['EmailType']?></option>
+                                        <? endforeach; ?>
+                                </select>
                         </div>
+                        	<? if(isset($errors['EmailTypes_id'])): ?><span class = "error"><?=$errors['EmailTypes_id'] ?> </span> <? endif;?>  
                 </div>
                 <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
@@ -48,3 +55,9 @@
                 </div>
         </form>
 </div>
+<script type="text/javascript">
+        $(function(){
+                $("#Users_id").val(<?=$model['Users_id']?>);
+                $("#EmailTypes_id").val(<?=$model['EmailTypes_id']?>);
+        })
+</script>

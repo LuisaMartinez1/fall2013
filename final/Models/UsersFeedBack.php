@@ -10,7 +10,14 @@ class UsersFeedBack {
            
                 if(isset($id))
                 {
-                        return fetch_one("SELECT * FROM Fall2013_UsersFeedBack WHERE id=$id");                        
+                		$sql = "SELECT 
+					    U.*, Us.`LastName` as `Users`
+							FROM
+					    Fall2013_UsersFeedBack U
+					        join
+						Fall2013_Users Us on U.Users_id = Us.id
+						WHERE U.id = $id";
+                        return fetch_one($sql);                        
                 }
                 else
                 {
