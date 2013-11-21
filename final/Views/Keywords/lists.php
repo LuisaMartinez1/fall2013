@@ -17,12 +17,12 @@
 	
 	<table class = "table table-hover  table-striped table-bordered">
 		<thead>
-		<tr>
-			
-			<th>Id</th>
-			<th>Product Key Word</th>
-			<th></th>
-		</tr>
+			<tr>
+				
+				<th>Id</th>
+				<th>Product Key Word</th>
+				<th></th>
+			</tr>
 		</thead>
 		<tbody>
 		<? foreach ($model as $rs): ?>

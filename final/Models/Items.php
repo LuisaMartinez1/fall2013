@@ -26,7 +26,7 @@ class Items {
                 else
                 {
                         return fetch_all('SELECT 
-						    U.id, ItemNumber, ItemName,ItemPrice, I.`Quantaty` as `Inventories_id`, C.`CategoryName` as `Categories_id`, PK.`Name` as `ProductKeyWords_id`
+						    U.id, ItemNumber, ItemName,ItemPrice,src, I.`Quantaty` as `Inventories_id`, C.`CategoryName` as `Categories_id`, PK.`Name` as `ProductKeyWords_id`
 								FROM
 						    Fall2013_Items U
 						        join

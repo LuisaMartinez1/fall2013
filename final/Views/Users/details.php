@@ -6,8 +6,6 @@
          <dd><?=$model['LastName']?></dd>
          <dt>created_at</dt>
          <dd><?=$model['created_at']?></dd>
-         <dt>Password</dt>
-         <dd><?=$model['password']?></dd>
          <dt>UserType</dt>
          <dd><?=$model['KeyWords']?></dd>
         </dl>

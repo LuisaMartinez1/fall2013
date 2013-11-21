@@ -20,6 +20,8 @@ include_once __DIR__ . '/../Models/PhoneTypes.php';
 include_once __DIR__ . '/../Models/EmailTypes.php';
 include_once __DIR__ . '/../Models/Inventory.php';
 
+
+
 function GetConnection()
 {
 	global $sql_password;

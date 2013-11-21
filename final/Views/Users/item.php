@@ -1,7 +1,7 @@
 		<tr class="<?= $rs['id']==$_REQUEST['id'] ? 'success' : '' ?>  ">
 				<td><?=$rs['FirstName']?></td>
 				<td><?=$rs['LastName']?></td>
-				<td><?=$rs['KeyWords_id']?></td>
+				<td><?=$rs['KeyWords']?></td>
 				<td>
 	  				<a class="glyphicon glyphicon-file" href="?action=details&id=<?=$rs['id']?>"></a>
                     <a class="glyphicon glyphicon-pencil" href="?action=edit&id=<?=$rs['id']?>"></a>

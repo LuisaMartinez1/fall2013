@@ -3,6 +3,7 @@ include_once '../../inc/_global.php';
 
 @$action = $_REQUEST['action'];
 @$format = $_REQUEST['format'];
+
 switch ($action) {
         case 'details':
                 $model = Addresses::Get($_REQUEST['id']);
@@ -25,13 +26,22 @@ switch ($action) {
                
 				if(!$errors)
 				{
-						header("Location: ?status=Saved&id=$_REQUEST[id]");   
-						die(); 
+						if($format == 'plain')
+						{
+							$view = 'item.php';
+							$rs   =  Addresses::Get($_REQUEST['id']);
+						}else
+						{
+							header("Location: ?status=Saved&id=$_REQUEST[id]");   
+							die();
+						}	
+						 
+				}else
+				{
+					$model = $_REQUEST;
+					$view = 'edit.php';
+					$title = "Edit: $model[Street]";           
 				}
-				$model = $_REQUEST;
-				$view = 'edit.php';
-				$title = "Edit: $model[Street]";           
-				
                 break;
                 
         case 'edit':
@@ -65,7 +75,9 @@ switch ($format){
 	case 'dialog':
 		include '../Shared/_DialogLayout.php';
 		break;
-	
+	case 'plain':
+		include $view;
+		break;
 	default:
 		include '../Shared/_Layout.php';
 		break;

@@ -20,7 +20,7 @@ class Users {
                 }
                 else
                 {
-                        return fetch_all('SELECT  U.* , K.Name as `KeyWords_id`
+                        return fetch_all('SELECT  U.* , K.Name as `KeyWords`
                 			FROM 
                 			Fall2013_Users U
                         	Join Fall2013_KeyWords  K ON U.KeyWords_id = K.id ');                        

@@ -25,7 +25,7 @@ class Addresses {
                 else
                 {
                         return fetch_all('SELECT 
-			   			 U.id,Street,City,Country,State,ZipCode, US.`LastName` as `Users_id`, AT.`AddressType` as `AddressTypes_id`
+			   			 U.*,US.LastName as `User`, AT.AddressType as `AddressTypes`
 							FROM
 						 Fall2013_Addresses U
 						        join
@@ -36,7 +36,7 @@ class Addresses {
 							
         }
 
-static public function Save($row)
+		static public function Save($row)
         {
         		$conn = GetConnection();
         		$row2 = Addresses::Encode($row,$conn);
