@@ -42,7 +42,7 @@ switch ($action) {
 				{
 					$model = $_REQUEST;
 					$view = 'edit.php';
-					$title = "Edit: $model[Street]";         
+					$title = "Edit: $model[FirstName] $model[LastName]";         
 				}  
 				break;
                 

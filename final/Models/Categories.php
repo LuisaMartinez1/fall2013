@@ -18,6 +18,13 @@ class Categories {
                 }
 					
         }
+		static public function GetName($id=null)
+		{
+			if(isset($id))
+			{
+				return fetch_one("SELECT CategoryName FROM Fall2013_Categories WHERE id=$id");
+			}
+		}
 	 	static public function Save($row)
         {
         		$conn = GetConnection();

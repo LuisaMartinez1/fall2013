@@ -36,8 +36,28 @@ class Items {
 								join 
 							Fall2013_ProductKeyWords PK on U.ProductKeyWords_id = PK.id ');                        
                 }
-		}		
-	static public function Save($row)
+		}	
+		static public function GetCategory($id)
+		{
+			
+					$sql = "SELECT 
+						    U.*, I.`Quantaty` as `Inventories`, C.`CategoryName` as `Categories`, PK.`Name` as `ProductKeyWords`
+								FROM
+						    Fall2013_Items U
+						        join
+							Fall2013_Inventories I on U.Inventories_id = I.id 
+								join 
+							Fall2013_Categories C on U.Categories_id = C.id
+								join 
+							Fall2013_ProductKeyWords PK on U.ProductKeyWords_id = PK.id
+							
+							WHERE Categories_id=$id";
+					
+						return fetch_one($sql);
+			
+		}
+			
+		static public function Save($row)
         {
         		$conn = GetConnection();
         		$row2 = Items::Encode($row,$conn);

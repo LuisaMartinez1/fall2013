@@ -4,16 +4,20 @@
     <title>My Website -<?=@$title?></title>
 	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+     
     <link href="jumbotron.css" rel="stylesheet">
     <style>
   		 body{padding-top:70px;}
    </style>
    </head>
-  <body>
+  <body style="background-color: #F8F8F8 ">
   	<header>
-  		<div class="container">
-  			<h2>Home</h2>
-  		</div>
+  	
+  		<div class="container" >
+	  		<div class="page-header" >
+	  			<h1 id ="navbar" style=" color:#000066; font-family:Fantasy">Catalog</h1>
+	  		</div>
+	    </div>
   	</header>
   	
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -27,17 +31,23 @@
           <a class="navbar-brand" href="../Front/">Home</a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            	  <li class = "Categories">
-            	 	<a href = "../Categories/">Categories</a>
-            	 </li>
-            	 
-            	 
+          <ul class="nav navbar-nav">	 
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="../Users/">Users</a></li>
-                <li><a href="../Categories/"></a></li>	                                   
+              			<li>
+              				<a href = "../Front/">All Products</a>
+              			</li>
+                
+                		<? foreach(Categories::Get() as $word): ?>
+	                		<li>
+	                			
+		                		<a href="../Front/?action=category&id=<?=$word['id']?>">
+		                			<?=$word['CategoryName']?>
+		                		</a>
+	                		 </li>
+                		<? endforeach; ?>
+                                                
               </ul>
              </li>
           </ul>
