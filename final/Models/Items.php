@@ -59,6 +59,12 @@ class Items {
 				
 			
 		}
+		public function Getcategories()
+		{
+			return fetch_all("SELECT * Fall2013_Categories ");
+		}
+		
+		
 		  static public function BlankComplete()
 		{
 			return array('id'=>null,'Orders_id'=> null, 'Items_id'=> null);
