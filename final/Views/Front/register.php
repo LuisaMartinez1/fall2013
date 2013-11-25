@@ -55,7 +55,7 @@
                 </div>
         </form>
         <br>
-        <a href = "?" type="button" class="btn btn-success">Cancel</a>
+        <a href = "?" type="button" class="btn btn-success">Next</a>
         <a href = "?action=payment" type="button" class="btn btn-info">Add Payment Method</a>
         <a href = "?action=address" type="button" class="btn btn-info">Add Shipping Address</a>
 </div>

@@ -10,6 +10,6 @@
 		<br>
 		<br>
 			<a href = "?action=register" type="button" class="btn btn-danger"> No </a>
-			<a href = "?action=order" type="button" class="btn btn-success"  >Yes</a>		
+			<a href = "?action=order&id=<?=$_REQUEST['id']?>" type="button" class="btn btn-success"  >Yes</a>		
 	</dl>
 </div>

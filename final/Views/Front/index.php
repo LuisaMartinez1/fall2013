@@ -11,7 +11,15 @@ switch($action) {
                 break;
 		case 'category':
 				$model = Items::GetCategory($_REQUEST['id']);
+				
 				$view  = 'list.php';
+				$title = "Category";
+				break;
+		case 'saveName':
+				
+				$model = Users::Get($_REQUEST['Users_id']);
+				$view  = 'orders.php';
+				
 				$title = "Category";
 				break;
 		case 'save':
@@ -89,6 +97,7 @@ switch($action) {
                
 				if(!$errors)
 				{
+						
 						header("Location: ?action=complete&id=$_REQUEST[id]");   
 						die(); 
 				}
@@ -117,6 +126,7 @@ switch($action) {
                 
 		case 'complete':
 				$model = Items::BlankComplete();
+				
 				$view  = 'complete.php';
 				$title = "Complete";
 				break;
@@ -130,6 +140,11 @@ switch($action) {
 				$view  = 'payment.php';
 				$title = "Payment";
 				break;
+		case 'name':
+				$model = Items::BlankUser();
+				$view  = 'pickName.php';
+				$title = "Name";
+				break;
 		case 'address':
 				$model = Items::BlankAddress();
 				$view  = 'address.php';
@@ -138,11 +153,13 @@ switch($action) {
 		
 		case 'verify':			
 				$model = Items::Get($_REQUEST['id']);
+				$modelPrice = Items::GetItemPrice($_REQUEST['id']);
 				$view  = 'verify.php';
 				$title = "$model[ItemName]"; 
 				break; 
 		case 'order':			
 				$model = Items::BlankOrder();
+				$modelPrice = Items::GetItemPrice($_REQUEST['id']);
 				$view  = 'orders.php';
 				$title = "Order"; 
 				break; 

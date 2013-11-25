@@ -86,6 +86,7 @@
                 </div>
         </form>
          <a href = "?" type="button" class="btn btn-danger">Cancel</a>
+         <a href = "?action=register" type="button" class="btn btn-info">Back</a> 
 </div>
 <script type="text/javascript">
         $(function(){

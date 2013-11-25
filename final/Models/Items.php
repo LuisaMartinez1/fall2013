@@ -66,8 +66,12 @@ class Items {
 		static public function GetItemPrice($id=null)
 		{
 			
-			return fetch_one("SELECT ItemPrice FROM Fall2013_Items  WHERE id=$id");
+			return fetch_one("SELECT ItemPrice FROM Fall2013_Items WHERE id=$id");
 	
+		}
+		static public function GetOrderNumber($id=null)
+		{
+			return fetch_one("SELECT PurchaseNumber FROM Fall2013_Orders WHERE id=$id");
 		}
 		static public function GetUser($id=null)
 		{

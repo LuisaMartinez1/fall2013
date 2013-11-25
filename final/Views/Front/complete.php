@@ -51,7 +51,7 @@
 </div>
 <script type="text/javascript">
         $(function(){
-                $("#Orders_id").val(<?=$model['Orders_id']?>);
+                $("#Orders_id").val(<?=$modelOrder['Orders_id']?>);
                 $("#Items_id").val(<?=$model['Items_id']?>);
         })
 </script>
