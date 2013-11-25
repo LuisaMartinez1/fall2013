@@ -24,7 +24,7 @@ class Orders {
                 else
                 {
                         return fetch_all('SELECT 
-					    U.id, PurchaseNumber, PurchaseDate, Us.`LastName` as `Users_id`, P.`Method` as `Fall2013_PaymentCreditCardTypes_id`,PurchasedTotal
+					    U.*, Us.`LastName` as `Users_id`, P.`Method` as `Fall2013_PaymentCreditCardTypes_id`,PurchasedTotal
 						FROM
 					    Fall2013_Orders U
 					        join

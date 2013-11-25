@@ -13,6 +13,7 @@
 </style>
 
 <div class="container2">
+	<h3>heeeeeeeeeeeeeee</h3>
         <? foreach ($model as $value): ?>
                 <div>
                 	<ul class="list-group">
@@ -37,7 +38,7 @@
 				                        <br><br>             
 			                        </div>
 			                         <button type="button" class="btn btn-info" href = "?action=details&id=<?=$value['id']?>&format=dialog" data-toggle="modal" data-target="#myModal">Details</button>
-				                	 <button type="button" id= "left" class="btn btn-success"  href = "?action=verify&id=<?=$value['id']?>&format=dialog" data-toggle="modal" data-target="#myModal">BUY</button>        
+				                	 <button type="button" id= "left" class="btn btn-success">BUY</button>        
 		                        </div>
 		                        <br>
 	                       </li>

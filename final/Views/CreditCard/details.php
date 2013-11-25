@@ -3,7 +3,7 @@
          <dt>User</dt>
          <dd><?=$model['Fall2013_Users']?></dd>
          <dt>CardNumber</dt>
-         <dd><?=$model['CreditCardNumber']?></dd>
+         <dd>XXXX-XXXX-XXXX-<?=substr($model['CreditCardNumber'],-4);?></dd>
          <dt>Card holder's Name</dt>
          <dd><?=$model['CreditCardHolderName']?></dd>
          <dt>Expiration Date</dt>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-    <title>My Website -<?=@$title?></title>
+    <title>My Website-<?=@$title?></title>
 	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
      
@@ -41,8 +41,7 @@
                 
                 		<? foreach(Categories::Get() as $word): ?>
 	                		<li>
-	                			
-		                		<a href="../Front/?action=category&id=<?=$word['id']?>">
+		                		<a href="?action=category&id=<?=$word['id']?>">
 		                			<?=$word['CategoryName']?>
 		                		</a>
 	                		 </li>

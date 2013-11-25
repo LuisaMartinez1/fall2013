@@ -12,6 +12,6 @@
 		<li class="leftText">Item Number: <?=$model['ItemNumber']?></li>
 		<li class="leftText">Category: <?=$model['Categories']?></li>
 		<br>
-		<div class="leftText"  style="color: #A80000">Items in Stock: <?=$model['Inventories']?></div>
+		<div class="leftText"  style="color: #A80000">Items left in Stock: <?=$model['Inventories']?></div>
 	</dl>
 </div>

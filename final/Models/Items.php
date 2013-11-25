@@ -26,7 +26,7 @@ class Items {
                 else
                 {
                         return fetch_all('SELECT 
-						    U.id, ItemNumber, ItemName,ItemPrice,src, I.`Quantaty` as `Inventories_id`, C.`CategoryName` as `Categories_id`, PK.`Name` as `ProductKeyWords_id`
+						    U.*,I.`Quantaty` as `Inventories_id`, C.`CategoryName` as `Categories_id`, PK.`Name` as `ProductKeyWords_id`
 								FROM
 						    Fall2013_Items U
 						        join
@@ -37,8 +37,9 @@ class Items {
 							Fall2013_ProductKeyWords PK on U.ProductKeyWords_id = PK.id ');                        
                 }
 		}	
-		static public function GetCategory($id)
+		static public function GetCategory($id=null)
 		{
+			
 			
 					$sql = "SELECT 
 						    U.*, I.`Quantaty` as `Inventories`, C.`CategoryName` as `Categories`, PK.`Name` as `ProductKeyWords`
@@ -51,11 +52,62 @@ class Items {
 								join 
 							Fall2013_ProductKeyWords PK on U.ProductKeyWords_id = PK.id
 							
-							WHERE Categories_id=$id";
+							WHERE C.id=$id ";
+							
 					
-						return fetch_one($sql);
+						    return fetch_all($sql);
+				
 			
 		}
+		  static public function BlankComplete()
+		{
+			return array('id'=>null,'Orders_id'=> null, 'Items_id'=> null);
+		}
+		static public function GetItemPrice($id=null)
+		{
+			
+			return fetch_one("SELECT ItemPrice FROM Fall2013_Items  WHERE id=$id");
+	
+		}
+		static public function GetUser($id=null)
+		{
+			if(isset($id))
+                {
+                	$sql = "SELECT  U.* , K.Name as `KeyWords`
+                			FROM 
+                			Fall2013_Users U 
+                        	Join Fall2013_KeyWords  K ON U.KeyWords_id = K.id
+                        	WHERE U.id=$id";
+                        return fetch_one($sql);                              
+                }
+                else
+                {
+                        return fetch_all('SELECT  U.* , K.Name as `KeyWords`
+                			FROM 
+                			Fall2013_Users U
+                        	Join Fall2013_KeyWords  K ON U.KeyWords_id = K.id ');                        
+                }
+		}
+		
+        static public function BlankAddress()
+		{
+			return array('id'=>null,'Users_id'=> null, 'AddressTypes_id'=> null, 'Street'=> null, 'City'=> null, 'Country'=> null, 'ZipCode'=> null,'State' =>null);
+		}
+		
+		static public function BlankOrder()
+		{
+			return array('id'=>null,'Users_id'=> null, 'PurchaseNumber'=> null, 'PurchaseDate'=> null, 'PurchasedTotal'=> null, 'Fall2013_PaymentCreditCardTypes_id'=> null);
+		}
+		static public function BlankPayment()
+		{
+			return array('id'=>null,'Fall2013_Users_id'=> null, 'CreditCardNumber'=> null, 'CreditCardHolderName'=> null, 'CreditExpirationDate'=> null, 'CreditSecurityCode'=> null,'Method'=>null);
+		}
+		static public function BlankUser()
+		{
+			return array('id'=>null,'FirstName'=> null, 'LastName'=> null, 'password'=> null, 'KeyWords_id'=> null, 'FBID'=> null);
+		}
+
+		
 			
 		static public function Save($row)
         {
@@ -65,7 +117,7 @@ class Items {
         	   if($row['id'])
 			   {
 			   	 $sql = " UPDATE  Fall2013_Items " 
-			   	 . " Set ItemNumber='$row2[ItemNumber]', ItemName='$row2[ItemName]', ItemPrice='$row2[ItemPrice]',ProductKeyWords_id='$row2[ProductKeyWords_id]',
+			   	 . " Set ItemNumber='$row2[ItemNumber]', ItemName='$row2[ItemName]',ItemPrice='$row2[ItemPrice]',ProductKeyWords_id='$row2[ProductKeyWords_id]',
 			   	     Categories_id='$row2[Categories_id]',Inventories_id='$row2[Inventories_id]'" 
 			   	 . " WHERE id=$row2[id] " ;
 			   }
@@ -88,7 +140,7 @@ class Items {
 
         static public function Blank()
 		{
-			return array('id'=>null,'ItemNumber'=> null, 'ItemName'=> null, 'ItemPrice'=> null, 'Inventories_id'=> null,'Categories_id'=> null,'ProductKeyWords_id'=> null );
+			return array('id'=>null,'ItemNumber'=> null, 'ItemName'=> null, 'ItemPrice'=> null, 'Inventories_id'=> null,'Categories_id'=> null,'ProductKeyWords_id'=> null,'src'=>null);
 		}
 
 		static public function Validate($row)
