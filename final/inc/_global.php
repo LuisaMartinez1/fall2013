@@ -24,9 +24,9 @@ include_once __DIR__ . '/../Models/Inventory.php';
 
 function GetConnection()
 {
-	global $sql_password;
-	$conn = new mysqli('localhost', 'n02076294', $sql_password, 'n02076294_db');
-	return $conn;
+        global $sql_password;
+        $conn = new mysqli('localhost', 'n02076294', $sql_password, 'n02076294_db');
+        return $conn;
 }
 
 function fetch_all($sql)

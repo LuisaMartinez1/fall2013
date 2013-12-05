@@ -37,32 +37,38 @@ class Items {
 							Fall2013_ProductKeyWords PK on U.ProductKeyWords_id = PK.id ');                        
                 }
 		}	
-		static public function GetCategory($id=null)
+		
+		public function GetByCategory($id=null)
 		{
-			
-			
-					$sql = "SELECT 
-						    U.*, I.`Quantaty` as `Inventories`, C.`CategoryName` as `Categories`, PK.`Name` as `ProductKeyWords`
-								FROM
-						    Fall2013_Items U
-						        join
-							Fall2013_Inventories I on U.Inventories_id = I.id 
-								join 
-							Fall2013_Categories C on U.Categories_id = C.id
-								join 
-							Fall2013_ProductKeyWords PK on U.ProductKeyWords_id = PK.id
-							
-							WHERE C.id=$id ";
-							
+			$sql = "SELECT * FROM Fall2013_Items 
+					WHERE Categories_id = $id";
 					
-						    return fetch_all($sql);
-				
-			
+					return fetch_all($sql);
 		}
-		public function Getcategories()
-		{
-			return fetch_all("SELECT * Fall2013_Categories ");
-		}
+		
+   
+		static public function GetCategory($id=null)
+                {
+                        
+                        
+                                        $sql = "SELECT 
+                                                    U.*, I.`Quantaty` as `Inventories`, C.`CategoryName` as `Categories`, PK.`Name` as `ProductKeyWords`
+                                                                FROM
+                                                    Fall2013_Items U
+                                                        join
+                                                        Fall2013_Inventories I on U.Inventories_id = I.id 
+                                                                join 
+                                                        Fall2013_Categories C on U.Categories_id = C.id
+                                                                join 
+                                                        Fall2013_ProductKeyWords PK on U.ProductKeyWords_id = PK.id
+                                                        
+                                                        WHERE C.id=$id ";
+                                                        
+                                        
+                                                    return fetch_all($sql);
+                                
+                        
+                }
 		
 		
 		  static public function BlankComplete()

@@ -1,40 +1,43 @@
 <?php
-include_once '../../inc/_global.php';
+//include_once '../../inc/_global.php';
+
 
 @$action = $_REQUEST['action'];
 @$format = $_REQUEST['format'];
-$errors = null ;
+$errors = null;
 
 
-switch ($action) {
-		case 'products':
-			$model= Items::GetCategory($_REQUEST['Categories_id']);
-			break;
+switch($action) {
         
-		case 'categoriest':
-				$model = Items::GetCategory();
-				break;
+        case 'categories':
+                $model = Categories::Get();
+                break;                
+        case 'products':
+                $model  = Items::GetByCategory($_REQUEST['Categories_id']);
+                break;      
         default:
-                // $model = Users::Get();
-                $view         = 'home.php';
-                $title        = 'Users';                
+                $view  = 'home.php';
+                $title = 'Store';                
                 break;
-				
 }
 
-switch ($format){
-	case 'dialog':
-		include '../Shared/_DialogLayout.php';
-		break;
-	case 'plain':
-		include $view;
-		break;
-	case 'json':
-		echo json_encode(array('model' => $model, 'errors' =>$errors));
-		break;
-	default:
-		include '../Shared/_PublicLayout.php';
-		break;
+switch ($format) {
+        case 'dialog':
+                include '../Shared/_DialogLayout.php';                                
+                break;
+                
+        case 'plain':
+                include $view;
+                break;
+                
+        case 'json':
+                echo json_encode(array('model'=> $model, 'errors'=> $errors));
+                break;
+        
+        default:
+                include '../Shared/_PublicLayout.php';                
+                break;
 }
+
 
 

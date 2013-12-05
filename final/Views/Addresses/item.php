@@ -1,3 +1,4 @@
+<div class= "container"	>
 			<tr class="<?= $rs['id']==$_REQUEST['id'] ? 'success' : '' ?>  ">
 				<td><?=$rs['User']?></td>
 				<td><?=$rs['AddressTypes']?></td>
@@ -12,3 +13,4 @@
                     <a class="glyphicon glyphicon-trash" href="?action=delete&id=<?=$rs['id']?>"></a>
 				</td>
 			</tr>	
+</div>
