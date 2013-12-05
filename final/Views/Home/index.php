@@ -1,5 +1,5 @@
 <?php
-//include_once '../../inc/_global.php';
+include_once '../../inc/_global.php';
 
 
 @$action = $_REQUEST['action'];
@@ -8,12 +8,11 @@ $errors = null;
 
 
 switch($action) {
-        
         case 'categories':
                 $model = Categories::Get();
                 break;                
         case 'products':
-                $model  = Items::GetByCategory($_REQUEST['Categories_id']);
+                $model  = Items:: GetByCategory($_REQUEST['Categories_id']);
                 break;      
         default:
                 $view  = 'home.php';

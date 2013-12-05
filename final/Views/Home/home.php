@@ -2,7 +2,7 @@
    <div>
       <ul class="nav nav-pills" data-bind="foreach: categories">
           <li>
-              <a href="#" data-bind="text: Name, click: $root.categoryClicked">
+              <a href="#" data-bind="text: CategoryName, click: $root.categoryClicked">
                  Cat1
               </a>
           </li>
@@ -12,7 +12,7 @@
   <div data-bind="foreach: products">
   	<div class="col-sm-3">
        <div class="well">
-          <h5 data-bind="text: Name" > </h5>
+          <h5 data-bind="text: ItemName" > </h5>
        </div>
     </div>
   </div>
@@ -40,7 +40,7 @@
                          products: ko.observableArray(),
                          
                          categoryClicked: function() {
-                                 $.getJSON("?action=products&format=json", { Categories_id: this.id } ,function(results){
+                                 $.getJSON("?action=products&format=json", {Categories_id: this.id } ,function(results){
                                          vm.products(results.model);
                                  })
                                  
