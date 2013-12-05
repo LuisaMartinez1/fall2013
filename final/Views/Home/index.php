@@ -1,5 +1,6 @@
 <?php
 include_once '../../inc/_global.php';
+session_start();
 
 
 @$action = $_REQUEST['action'];
@@ -13,7 +14,15 @@ switch($action) {
                 break;                
         case 'products':
                 $model  = Items:: GetByCategory($_REQUEST['Categories_id']);
-                break;      
+                break;   
+		case 'addToCart':
+				if(!isset($_SESSION['cart'])) $_SESSION['cart'] = array();
+				$cart = $_SESSION['cart'];
+				$cart[] = $_REQUEST['id'];
+				$_SESSION['cart']= $cart;
+				
+				header('Location: ?'); die();
+				break;   
         default:
                 $view  = 'home.php';
                 $title = 'Store';                

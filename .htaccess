@@ -1,0 +1,7 @@
+RewriteEngine On 
+
+ErrorDocument 404 /~n02076294/2013/final/Views/Errors?id=404
+
+#this does not get considered 
+RewriteCond %{QUERY_STRING} ^(.*)
+RewriteRule ^W/([^/]*)/*([^/]*)/*([^/]*)/*([^/]*)/* /~n02076294/2013/final/Views/$1/Home/index.php?action=$2&id=$3&%1
