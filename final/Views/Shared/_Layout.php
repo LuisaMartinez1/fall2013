@@ -69,7 +69,8 @@
           <form class="navbar-text pull-right">
            Signed in as 
            <a class ="navbar-link" href="#" >
-           		Luisa Martinez
+           	<? $user=Auth::GetUser();echo $user['LastName'];?>
+           		
            </a>
           </form>
         </div>

@@ -3,6 +3,7 @@ include_once '../../inc/_global.php';
 
 @$action = $_REQUEST['action'];
 @$format = $_REQUEST['format'];
+$errors = null ;
 
 switch ($action) {
         case 'details':
@@ -26,10 +27,10 @@ switch ($action) {
                
 				if(!$errors)
 				{
-						if($format == 'plain')
+						if($format == 'plain' || $format == 'json')
 						{
 							$view = 'item.php';
-							$rs   =  Addresses::Get($_REQUEST['id']);
+							$rs = $model  =  Addresses::Get($_REQUEST['id']);
 						}else
 						{
 							header("Location: ?status=Saved&id=$_REQUEST[id]");   
@@ -77,6 +78,9 @@ switch ($format){
 		break;
 	case 'plain':
 		include $view;
+		break;
+	case 'json':
+		echo json_encode(array('model' => $model, 'errors' =>$errors));
 		break;
 	default:
 		include '../Shared/_Layout.php';

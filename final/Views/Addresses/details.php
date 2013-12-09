@@ -3,7 +3,7 @@
          <dt>Users</dt>
          <dd><?=$model['User']?></dd>
          <dt>AddressType</dt>
-         <dd><?=$model['AddressTypes']?></dd>
+         <dd><?=$model['AddressTyp']?></dd>
          <dt>Street</dt>
          <dd><?=$model['Street']?></dd>
          <dt>City</dt>

@@ -1,5 +1,6 @@
 <?php
 include_once('_password.php');
+session_start();
 include_once __DIR__ . '/../Models/Keywords.php';
 include_once __DIR__ . '/../Models/Users.php';
 include_once __DIR__ . '/../Models/Addresses.php';
@@ -19,6 +20,7 @@ include_once __DIR__ . '/../Models/AddressTypes.php';
 include_once __DIR__ . '/../Models/PhoneTypes.php';
 include_once __DIR__ . '/../Models/EmailTypes.php';
 include_once __DIR__ . '/../Models/Inventory.php';
+include_once __DIR__ . '/../Models/Auth.php';
 
 
 

@@ -12,7 +12,7 @@ class Addresses {
                 if(isset($id))
                 {
                 		$sql = "SELECT 
-			   			 U.*,US.LastName as `User`, AT.AddressType as `AddressTypes`
+			   			 U.*,US.LastName as `User`, AT.AddressType as `AddressTyp`
 							FROM
 						 Fall2013_Addresses U
 						        join
@@ -25,7 +25,7 @@ class Addresses {
                 else
                 {
                         return fetch_all('SELECT 
-			   			 U.*,US.LastName as `User`, AT.AddressType as `AddressTypes`
+			   			 U.*,US.LastName as `User`, AT.AddressType as `AddressTyp`
 							FROM
 						 Fall2013_Addresses U
 						        join
@@ -74,9 +74,9 @@ class Addresses {
 			$errors = array();
 			if(!is_numeric($row['Users_id'])) $errors['Users_id'] = " input has to be numeric";
 			if(!$row['AddressTypes_id']) $errors['AddressTypes_id']=" is required";
-			if(!$row['Users_id']) $errors['Street']=" is required";
-			if(!$row['Users_id']) $errors['City']=" is required";
-			if(!$row['Users_id']) $errors['Country']=" is required";
+			if(!$row['Street']) $errors['Street']=" is required";
+			if(!$row['City']) $errors['City']=" is required";
+			if(!$row['Country']) $errors['Country']=" is required";
 			
 			
 			
