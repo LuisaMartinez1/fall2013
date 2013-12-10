@@ -21,8 +21,10 @@ const ADMIN = 7;
 			$sql = " SELECT  U.* 
                 	 FROM Fall2013_Users U 
                         	
-                      WHERE U.LastName = $userName";
-                      $user =  fetch_one($sql);   
+                      WHERE U.LastName = '$userName'
+                      ";
+					  
+            $user =  fetch_one($sql);   
 			if($user['password'] == $password)
 			{
 				$_SESSION['User'] = $user;
@@ -32,7 +34,7 @@ const ADMIN = 7;
 		{
 			if(!self::IsLoggedIn())
 			{
-				header("Location " .   "/~n02076294/2013/final/../Views/Auth?action=login"); die();
+				header('Location: ' . "/~n02076294/2013/final/Views/Auth/?action=login"); die();
 			}
 		}
 	}

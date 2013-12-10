@@ -1,8 +1,6 @@
 <?php
 include_once '../../inc/_global.php';
 
-
-
 @$action = $_REQUEST['action'];
 @$format = $_REQUEST['format'];
 $errors = null;
@@ -25,7 +23,7 @@ switch($action) {
 				break;   
         default:
                 $view  = 'home.php';
-                $title = 'Store';                
+                $title = 'Home';                
                 break;
 }
 

@@ -12,9 +12,10 @@ switch ($action) {
                 $view  = 'login.php';     
 				$title = "Login";           
                 break;
+				
 		case 'submitlogin':
 			Auth::LogIn($_REQUEST['LastName'], $_REQUEST['password']);
-			header("Location: ../Users/ ");
+			header("Location: ../Users/");
 			break;
                 
         

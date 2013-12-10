@@ -1,6 +1,3 @@
-<style type = "text/css">
-    .error{color:red;}
-</style>
 <div class="container">
 	<? if(isset($errors) && $errors): ?>
 	<ul class="error">
