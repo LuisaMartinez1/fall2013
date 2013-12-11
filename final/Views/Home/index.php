@@ -21,6 +21,35 @@ switch($action) {
 				
 				header('Location: ?'); die();
 				break;   
+		case 'verify':
+				$view  = 'verify.php';
+				$title = "Verify";
+				break; 
+		case 'register':
+			  $model = Items::BlankUser();
+			  $view  = 'register.php';
+			  $title = "Register";
+			  break;
+		case 'payment':
+				$model = Items::BlankPayment();
+				$view  = 'payment.php';
+				$title = "Payment";
+				break;
+		case 'address':
+				$model = Items::BlankAddress();
+				$view  = 'address.php';
+				$title = "Address";
+				break;
+		case 'login':
+				$model = array('LastName' => null,'password'=>null);
+                $view  = 'login.php';     
+				$title = "Login";           
+                break;
+		case 'submitlogin':
+			Auth::LogIn($_REQUEST['LastName'], $_REQUEST['password']);
+			$view = 'orders.php';
+			break;
+				
         default:
                 $view  = 'home.php';
                 $title = 'Home';                

@@ -28,7 +28,7 @@ const ADMIN = 7;
 			if($user['password'] == $password)
 			{
 				$_SESSION['User'] = $user;
-			}    
+			} 
 		}
 		static public function Secure()
 		{

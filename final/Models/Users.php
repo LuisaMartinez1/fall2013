@@ -79,6 +79,7 @@ class Users {
 			}
 			
 		}
+		
 	static function Encode($row, $conn)
 	{
 			

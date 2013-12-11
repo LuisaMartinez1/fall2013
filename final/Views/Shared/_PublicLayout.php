@@ -8,7 +8,7 @@
   <body>
   	<header>
   		<div class="container">
-  			<h1 style=" color:#000066">Home</h1>
+  			<h1 style=" color:#000066">E-buy</h1>
   		</div>
   	</header>
 <div class="container"> 	
@@ -20,7 +20,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../Home/">Home</a>
+          <a class="navbar-brand" href="../Home/"><div class= "glyphicon glyphicon-home"></div> Home</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">  
@@ -28,13 +28,21 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Manage Account <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="../Auth/?action=login">Login</a></li>    
-                <li><a href="../Users/?action=new">Register</a></li>                                        
+                <li><a href="../Register/?action=new">Register</a></li>                                        
               </ul>
              </li>
              
           </ul>
           <form class="navbar-text pull-right" id="shopping-cart">
           	<a href="#" class="navbar-link">Cart</a>
+          	
+          </form>
+          <form class="navbar-text pull-right">
+           <div class ="glyphicon glyphicon-user"></div> Signed in as
+           <a class ="navbar-link" href="#" >
+           	<? $user=Auth::GetUser();echo $user['LastName'];?>
+           		
+           </a>
           </form>
         </div>
       </nav>

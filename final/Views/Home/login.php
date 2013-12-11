@@ -11,10 +11,8 @@
 		<? endforeach; ?>
 	</ul>
 	<? endif; ?>
+	<div class="container">
         <form action="?action=submitlogin" method="post" class="form-horizontal row">
-             
-                
-                
                 <div class="form-group <?=isset($errors['LastName']) ? 'has error' : '' ?>">
                         <label for="LastName" class="col-sm-2 control-label">Last Name</label>
                         <div class="col-sm-10">
@@ -36,6 +34,7 @@
                         </div>
                 </div>
         </form>
+</div>
 </div>
 <script type="text/javascript">
         $(function(){

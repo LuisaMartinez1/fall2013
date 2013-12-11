@@ -1,5 +1,7 @@
 <?php
 include_once '../../inc/_global.php';
+Auth::Secure();
+
 
 @$action = $_REQUEST['action'];
 @$format = $_REQUEST['format'];

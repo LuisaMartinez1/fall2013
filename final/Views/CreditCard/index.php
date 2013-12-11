@@ -1,6 +1,7 @@
 <?php
 include_once '../../inc/_global.php';
-Auth::HasPermission();
+Auth::Secure() && Auth::HasPermission();
+
 @$action = $_REQUEST['action'];
 @$format = $_REQUEST['format'];
 

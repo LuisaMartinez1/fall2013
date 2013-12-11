@@ -11,10 +11,16 @@
 		<? endforeach; ?>
 	</ul>
 	<? endif; ?>
-        <form action="?action=submitlogin" method="post" class="form-horizontal row">
-             
+        <form action="?action=save" method="post" class="form-horizontal row">
+                <input type="hidden" name="id" value="<?=$model['id']?>"/>
                 
-                
+                <div class="form-group <?=isset($errors['FirstName']) ? 'has error' : '' ?>">
+                        <label for="FirstName" class="col-sm-2 control-label">First Name</label>
+                        <div class="col-sm-10">
+                                <input type="text" name="FirstName" id="FirstName" placeholder="First Name" class="form-control" value="<?=$model['FirstName']?>"/>
+                                <? if(isset($errors['FirstName'])): ?><span class = "error"><?=$errors['FirstName'] ?> </span> <? endif;?>
+                        </div>
+                </div>
                 <div class="form-group <?=isset($errors['LastName']) ? 'has error' : '' ?>">
                         <label for="LastName" class="col-sm-2 control-label">Last Name</label>
                         <div class="col-sm-10">
@@ -29,10 +35,20 @@
                                 <? if(isset($errors['password'])): ?><span class = "error"><?=$errors['password'] ?> </span> <? endif;?>
                         </div>
                 </div>
-              
+                <div class="form-group <?=isset($errors['KeyWords_id']) ? 'has error' : '' ?>">
+                        <label for="KeyWords_id" class="col-sm-2 control-label">User Type</label>
+                        <div class="col-sm-10">
+                                <select name="KeyWords_id" id="KeyWords_id" class="form-control" >
+                                        <? foreach(Keywords::Get() as $keywordRs): ?>
+                                                <option value="<?=$keywordRs['id']?>"><?=$keywordRs['Name']?></option>
+                                        <? endforeach; ?>
+                                </select>
+                        </div>
+                        <? if(isset($errors['KeyWords_id'])): ?><span class = "error"><?=$errors['KeyWords_id'] ?> </span> <? endif;?>
+                </div>
                 <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                                <input type="submit" class="form-control btn btn-primary" value="Login"/>
+                                <input type="submit" class="form-control btn btn-primary" value="Save"/>
                         </div>
                 </div>
         </form>

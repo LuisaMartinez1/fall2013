@@ -12,10 +12,6 @@
                 
                 
     }
-    #boder{
-    	
-    	
-    }
  	#shopping-cart-list {
                 position: fixed;
                 right:  0px;
@@ -99,9 +95,10 @@
      </div>
      <div>
          <span id="price"> Total: $ <span data-bind="text: cartTotal"></span></span>
-         <button type="button" class="btn btn-success pull-right" >CheckOut</button>
+         <button type="button" class="btn btn-success pull-right"  href = "?action=verify&i&format=dialog" data-toggle="modal" data-target="#myModal">CheckOut</button>       
      </div>	
 </div>
+<div id ="myModal" class="modal fade"  data-backdrop = "static"></div>
 </div>
 
 
