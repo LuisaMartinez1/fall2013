@@ -28,8 +28,20 @@ class CreditCard {
 					        join
 						Fall2013_Users Us on U.Fall2013_Users_id = Us.id ');                        
                 }
-		}					
-static public function Save($row)
+		}	
+		static public function GetPayment($id)
+		{
+			$sql = "SELECT U.*,
+					    Us.`id` as `userid`
+						FROM
+					    Fall2013_PaymentCreditCardTypes U
+					        join
+						Fall2013_Users Us on U.Fall2013_Users_id = Us.id
+						WHERE Us.id=$id ";
+			 return fetch_all($sql);
+		}
+						
+		static public function Save($row)
         {
         		$conn = GetConnection();
         		$row2 =  CreditCard::Encode($row,$conn);
@@ -56,6 +68,8 @@ static public function Save($row)
                         return false;
                 }
         }
+		
+		
 
         static public function Blank()
 		{

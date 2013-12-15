@@ -63,7 +63,7 @@ class Users {
 		static public function Validate($row)
 		{
 			$errors = array();
-			if(!$row['KeyWords_id']) $errors['KeyWords_id']=" is required";
+			if(!$row['password']) $errors['password']=" is required";
 			if(!$row['FirstName']) $errors['FirsttName']=" is required";
 			if(!$row['LastName']) $errors['LastName']=" is required";
 		

@@ -1,9 +1,12 @@
 <?php
 include_once '../../inc/_global.php';
 
+
 @$action = $_REQUEST['action'];
 @$format = $_REQUEST['format'];
 $errors = null;
+$user=Auth::GetUser();
+@$PurchaseTotal['PurchaseTotal'];
 
 
 switch($action) {
@@ -22,9 +25,10 @@ switch($action) {
 				header('Location: ?'); die();
 				break;   
 		case 'verify':
+				
 				$view  = 'verify.php';
 				$title = "Verify";
-				break; 
+				break; 	
 		case 'register':
 			  $model = Items::BlankUser();
 			  $view  = 'register.php';
@@ -46,10 +50,125 @@ switch($action) {
 				$title = "Login";           
                 break;
 		case 'submitlogin':
-			Auth::LogIn($_REQUEST['LastName'], $_REQUEST['password']);
-			$view = 'orders.php';
-			break;
+				Auth::LogIn($_REQUEST['LastName'], $_REQUEST['password']);
+				$view = 'orders.php';
+				break;
+		
+		case 'save':
+				$errors = Users::Validate($_REQUEST);
+				if(!$errors)
+				{
+					$errors = Users::Save($_REQUEST);
+				}
+               
+				if(!$errors)
+				{
+						
+							header("Location: ?status=Saved&id=$_REQUEST[id]");   
+							die();
+							
+						  
+				}
+					$model = $_REQUEST;
+					$view = 'register.php';
+					$title ="Save";         
 				
+				break;
+		case 'saveaddress':
+				$errors = Addresses::Validate($_REQUEST);
+				if(!$errors)
+				{
+					$errors = Addresses::Save($_REQUEST);
+				}
+               
+				if(!$errors)
+				{
+						if($format == 'plain')
+						{
+							$view = 'item.php';
+							$rs   =  Addresses::Get($_REQUEST['id']);
+						}else
+						{
+							header("Location: ?action=register&id=$_REQUEST[id]");   
+							die();
+						}	
+						 
+				}else
+				{
+					$model = $_REQUEST;
+					$view = 'edit.php';
+					$title = "Edit: $model[Street]";           
+				}
+                break;
+		case 'saveorder':
+				$errors = Orders::Validate($_REQUEST);
+				if(!$errors)
+				{
+					$errors = Orders::Save($_REQUEST);
+				}
+               
+				if(!$errors)
+				{
+						
+						header("Location: ?action=complete");   
+						die(); 
+				}
+				$model = $_REQUEST;
+				$view = 'orders.php';
+				$title = "saveOrder";           
+				
+                break;
+		case 'order':			
+				$model = Items::BlankOrder();
+				
+				$view  = 'orders.php';
+				$title = "Order"; 
+				break; 
+		case 'complete':
+				$model = Items::BlankComplete();
+				$Number = Orders::GetOrder($user['id']);
+				$view  = 'complete.php';
+				$title = "Complete";
+				break;
+        case 'savepayment':
+			 	$errors = CreditCard::Validate($_REQUEST);
+				if(!$errors)
+				{
+					$errors = CreditCard::Save($_REQUEST);
+				}
+               
+				if(!$errors)
+				{
+						header("Location: ?action=register&id=$_REQUEST[id]");   
+						die(); 
+				}
+				$model = $_REQUEST;
+				$view = 'edit.php';
+				$title = "Edit: $model[Method] $model[CreditCardNumber]";           
+				
+                break;
+		case 'savecomplete':
+				$errors =  OrderItem::Validate($_REQUEST);
+				if(!$errors)
+				{
+					$errors = OrderItem::Save($_REQUEST);
+				}
+               
+				if(!$errors)
+				{
+						$view = 'receipt.php';
+				}
+				$model = $_REQUEST;
+				$view = 'receipt.php';
+				$title = "Finish ";           
+				
+                break;
+                       
+		case 'logout':
+			  session_destroy();
+			  session_start();
+			  $view  = 'home.php';
+			  break;		
         default:
                 $view  = 'home.php';
                 $title = 'Home';                

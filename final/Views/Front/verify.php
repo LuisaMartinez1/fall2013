@@ -1,3 +1,4 @@
+
 <style>
 	#pic{float:left;margin-top:5px;}
    	.leftText{position:relative;left:20px;}

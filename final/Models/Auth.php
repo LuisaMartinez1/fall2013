@@ -1,5 +1,7 @@
 <?
 const ADMIN = 7;
+const CUSTOMER = 2;
+
 	class Auth
 	{
 		public static function IsLoggedIn()
@@ -8,7 +10,11 @@ const ADMIN = 7;
 		}
 		public static function GetUser()
 		{
-			return $_SESSION['User'];
+			if(isset($_SESSION['User']))
+			{
+				
+				return $_SESSION['User'];
+			}	
 		}
 		public static function HasPermission()
 		{
@@ -21,7 +27,7 @@ const ADMIN = 7;
 			$sql = " SELECT  U.* 
                 	 FROM Fall2013_Users U 
                         	
-                      WHERE U.LastName = '$userName'
+                     WHERE U.LastName = '$userName'
                       ";
 					  
             $user =  fetch_one($sql);   
@@ -36,5 +42,13 @@ const ADMIN = 7;
 			{
 				header('Location: ' . "/~n02076294/2013/final/Views/Auth/?action=login"); die();
 			}
+			
+			$user = self::GetUser();
+			if(isset($user) && @$user['KeyWords_id'] == CUSTOMER)
+			{
+				header('Location:'. "../Home");
+				die();
+			}
+			
 		}
 	}

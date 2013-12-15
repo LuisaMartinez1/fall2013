@@ -1,3 +1,7 @@
+<? include_once '../../inc/_global.php';
+   
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -24,11 +28,15 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">  
+          	 <li class = "Register">
+            	 	<a href="../Home/?action=register">Register</a>
+              </li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Manage Account <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="../Auth/?action=login">Login</a></li>    
-                <li><a href="../Register/?action=new">Register</a></li>                                        
+              	<li><a href="../Users/">Admin</a></li>  
+                <li><a href="../Home/?action=logout">Logout</a></li>  
+                <li><a href="../Home/?action=login">LogIn</a></li>                                    
               </ul>
              </li>
              
@@ -40,8 +48,15 @@
           <form class="navbar-text pull-right">
            <div class ="glyphicon glyphicon-user"></div> Signed in as
            <a class ="navbar-link" href="#" >
-           	<? $user=Auth::GetUser();echo $user['LastName'];?>
-           		
+           	<? if(Auth::IsLoggedIn())
+			   {
+           		  $user=Auth::GetUser();echo $user['LastName'];
+           	   }
+			   else
+			   {
+			   	  echo "Not LoggedIn";
+			   }
+           	?>
            </a>
           </form>
         </div>

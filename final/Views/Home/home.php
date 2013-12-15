@@ -8,9 +8,7 @@
                 border-style:solid;
     			border-color: #989898 ;
 				border-width:5px;
-				border-radius:25px;
-                
-                
+				border-radius:25px;             
     }
  	#shopping-cart-list {
                 position: fixed;
@@ -54,7 +52,7 @@
 <div class="container">
    <div id ="category-list">
       <ul class="nav nav-pills" data-bind="foreach: categories">
-          <li data-bind="css: { active:$data == $root.currentCategory() }">
+          <li data-bind="css: {active:$data == $root.currentCategory() }">
               <a href="#" data-bind="text: CategoryName, click: $root.categoryClicked">
                  Cat1
               </a>
@@ -62,8 +60,7 @@
       </ul>
   </div>
   <br>
-  <br> 
-       
+  <br>      
   <div  class = "row" id ="item-list" data-bind="foreach: products">
   	<div class="col-sm-3" >
        <div class="well clearfix">
@@ -114,47 +111,8 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.0.0/knockout-min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.js"></script>
-        
+      
         <script type="text/javascript">
-        $(function(){
-                 var vm = {
-                         categories: ko.observableArray(),
-                         products: ko.observableArray(),
-                         currentCategory: ko.observable(),
-                         cart : ko.observableArray(),
-                         
-                         categoryClicked: function() {
-                                 $.getJSON("?action=products&format=json", {Categories_id: this.id } ,function(results){
-                                         vm.products(results.model);
-                                 })
-                                 
-                       },
-                       addToCart : function(){
-                       		vm.cart.push(this);
-                       },
-                       removeFromCart: function(){
-                       		vm.cart.remove(this);
-                       },
-                       toggleCartList: function(){
-                       		$("#shopping-cart-list").toggleClass("closed");
-                       }
-                         
-                 }
-                 vm.cartTotal = ko.computed(function(){
-                 	var tot = 0;
-                 	$.each(vm.cart(), function(i,x){
-                 		tot += +x.ItemPrice;
-                 	})
-                 	return tot;
-                 })               
-                 ko.applyBindings(vm);
-                 $("#shopping-cart").html($("#shopping-cart-template").html())
-                 ko.applyBindings(vm, $("#shopping-cart")[0]);
-                 
-                	 $.get("?action=categories&format=json",null, null, 'json')
-                	 	.always(function(results){
-                         	vm.categories(results.model);
-                 })
-         });
+       		<?include_once '../../script/main.js';?>
          </script>
  <? } ?>

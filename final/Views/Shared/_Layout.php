@@ -23,7 +23,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../Home/" ><div class="glyphicon glyphicon-home "></div></a>
+          <a class="navbar-brand" href="../Home/" ><div class="glyphicon glyphicon-home "></div> Home</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">

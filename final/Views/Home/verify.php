@@ -1,3 +1,4 @@
+<?$user=Auth::GetUser();?>
 <style>
 	#pic{float:left;margin-top:5px;}
    	.leftText{position:relative;left:20px;}
@@ -10,6 +11,6 @@
 		<br>
 		<br>
 			<a href = "?action=register" type="button" class="btn btn-danger"> No </a>
-			<a href = "?action=login&id=<?=$_REQUEST['id']?>" type="button" class="btn btn-success"  >Yes</a>		
+			<a href = "?action=login&id=<?=$user['id']?>" type="button" class="btn btn-success"  >Yes</a>		
 	</dl>
 </div>

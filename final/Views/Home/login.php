@@ -30,10 +30,13 @@
               
                 <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                                <input type="submit" class="form-control btn btn-primary" value="Login"/>
-                        </div>
+                                <input type="submit" class="form-control btn btn-primary" value="Make Purchase/LogIn"/><br>
+                                                    
                 </div>
         </form>
+        
+        
+      
 </div>
 </div>
 <script type="text/javascript">

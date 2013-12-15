@@ -32,7 +32,8 @@ class OrderItem{
 							join
 						Fall2013_Items I on U.Items_id = I.id ');                        
                 }
-		}		
+		}	
+		
 	static public function Save($row)
         {
         		$conn = GetConnection();
@@ -70,7 +71,7 @@ class OrderItem{
 		{
 			$errors = array();
 			if(!$row['Items_id']) $errors['Items_ide']=" is required";
-			if(!is_numeric($row['Orders_id'])) $errors['Orders_id'] = " input has to be numeric";
+	
 			
 			
 			if(count($errors) == 0)

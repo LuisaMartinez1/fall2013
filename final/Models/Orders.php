@@ -1,5 +1,5 @@
-<?php
 
+<?php
 /**
  * 
  */
@@ -33,8 +33,26 @@ class Orders {
 						Fall2013_PaymentCreditCardTypes P on U.Fall2013_PaymentCreditCardTypes_id = P.id ');                        
                 }
 		}		
+		static public function GetOrder($id)
+		{
+			$sql = "SELECT 
+					    PurchaseNumber
+						FROM
+					    Fall2013_Orders 
+						WHERE Users_id=$id";
+			return fetch_one($sql);
+		}
+		static public function GetOrderid($id)
+		{
+			$sql = "SELECT 
+					    id
+						FROM
+					    Fall2013_Orders 
+						WHERE Users_id=$id";
+			return fetch_one($sql);
+		}
 
-static public function Save($row)
+		static public function Save($row)
         {
         		$conn = GetConnection();
         		$row2 = Orders::Encode($row,$conn);
@@ -46,7 +64,7 @@ static public function Save($row)
 			   	 . " WHERE id=$row2[id] " ;
 			   }
 			   else {
-				   $sql = " Insert Into Fall2013_Orders (Users_id, PurchaseNumber, PurchaseDate, Fall2013_PaymentCreditCardTypes_id, PurchasedTotal) "
+				   $sql = " Insert Into Fall2013_Orders(Users_id, PurchaseNumber, PurchaseDate, Fall2013_PaymentCreditCardTypes_id, PurchasedTotal) "
                         .  " Values ('$row2[Users_id]', '$row2[PurchaseNumber]', '$row2[PurchaseDate]', '$row2[Fall2013_PaymentCreditCardTypes_id]','$row2[PurchasedTotal]') ";
 			   }
                 
@@ -70,9 +88,7 @@ static public function Save($row)
 		static public function Validate($row)
 		{
 			$errors = array();
-			if(!$row['PurchaseNumber']) $errors['PurchaseNumber']=" is required";
-			if(!$row['Fall2013_PaymentCreditCardTypes_id']) $errors['Fall2013_PaymentCreditCardTypes_id']=" is required";
-			if(!is_numeric($row['Users_id'])) $errors['Users_id'] = " input has to be numeric";
+			
 			if(!$row['PurchasedTotal']) $errors['PurchasedTotal']=" is required";
 			
 			if(count($errors) == 0)
